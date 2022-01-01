@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPlace.WPF", "PizzaPlace.WPF\PizzaPlace.WPF.csproj", "{2E736835-051D-4EC8-AB4A-E175C65835F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace.WPF", "PizzaPlace.WPF\PizzaPlace.WPF.csproj", "{2E736835-051D-4EC8-AB4A-E175C65835F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestPizzaProject", "TestPizzaProject", "{A8327000-4331-4C54-B936-BD24FD54FBF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWPFApplication", "TestPizzaProject\TestWPFApplication\TestWPFApplication.csproj", "{18853EA3-285E-4257-BF1C-C93061621C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApplication", "TestPizzaProject\TestConsoleApplication\TestConsoleApplication.csproj", "{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,21 @@ Global
 		{2E736835-051D-4EC8-AB4A-E175C65835F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E736835-051D-4EC8-AB4A-E175C65835F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E736835-051D-4EC8-AB4A-E175C65835F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18853EA3-285E-4257-BF1C-C93061621C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18853EA3-285E-4257-BF1C-C93061621C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18853EA3-285E-4257-BF1C-C93061621C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18853EA3-285E-4257-BF1C-C93061621C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18853EA3-285E-4257-BF1C-C93061621C52} = {A8327000-4331-4C54-B936-BD24FD54FBF0}
+		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362} = {A8327000-4331-4C54-B936-BD24FD54FBF0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03DA2F1F-3120-4409-BBF0-59D1E475EE28}
