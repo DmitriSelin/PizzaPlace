@@ -6,5 +6,78 @@
         xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:PizzaPlace.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Pizza Place" Height="450" Width="800">
+    <Grid Background="#05666C">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border  Grid.Column="1" Grid.Row="1" CornerRadius="20" Background="#F8F8FA">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" 
+                           Grid.ColumnSpan="2" Text="My Account"
+                           Style="{StaticResource NameTextBlockStyle}"/>
+                <fa:ImageAwesome Icon="Regular_UserCircle" Grid.ColumnSpan="2"
+                                 Grid.Column="0"  Grid.Row="1" />
+                <WrapPanel Grid.Column="0" Grid.Row="2">
+                    <fa:ImageAwesome Icon="Solid_UserCircle"
+                                     Margin="5, 0, 10, 0" Foreground="#1C1F30"/>
+                    <TextBlock Text="Email" Foreground="#1C1F30"
+                               Style="{StaticResource BoldTextBlockStyle}"/>
+                </WrapPanel>
+                <TextBox Style="{StaticResource LoginStyle}" Grid.Column="0" Grid.Row="3"
+                         Grid.ColumnSpan="2" VerticalContentAlignment="Center" Background="LightGray" BorderThickness="0"/>
+                <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                    <fa:ImageAwesome Icon="Solid_Lock"
+                                     Margin="5, 0, 10, 3" Foreground="#1C1F30"/>
+                    <TextBlock Text="Password" Foreground="#1C1F30"
+                               Style="{StaticResource BoldTextBlockStyle}"/>
+                </WrapPanel>
+                <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
+                             VerticalContentAlignment="Center"
+                             Style="{StaticResource PasswordStyle}" Background="LightGray"/>
+                <Button Grid.Column="0" Grid.Row="6" Background="#E0992F"
+                        Content="Sign In" Margin="15" Cursor="Hand">
+                </Button>
+                <Button Grid.Column="1" Grid.Row="6" Background="#E0992F"
+                        Content="Log In" Margin="15">
+                </Button>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0" HorizontalAlignment="Right">
+                <fa:ImageAwesome Icon="Brands_Facebook"
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30"/>
+                <fa:ImageAwesome Icon="Brands_Twitter"
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30"/>
+                <fa:ImageAwesome Icon="Brands_Telegram" 
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30" Cursor="Hand"/>
+                <fa:ImageAwesome Icon="Brands_Instagram"
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30"/>
+            </WrapPanel>
+        </Grid>
+    </Grid>
 </Window>

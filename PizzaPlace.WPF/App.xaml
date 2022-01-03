@@ -10,6 +10,10 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                <ResourceDictionary Source="Resources/ImagesStyles/ImageStyle.xaml"/>
+                <ResourceDictionary Source="Resources/TextStyles/TextBlockStyle.xaml"/>
+                <ResourceDictionary Source="Resources/TextStyles/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Resources/ButtonStyles/ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

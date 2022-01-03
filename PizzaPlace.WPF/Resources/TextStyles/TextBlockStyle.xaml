@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="NameTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="BoldTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+</ResourceDictionary>

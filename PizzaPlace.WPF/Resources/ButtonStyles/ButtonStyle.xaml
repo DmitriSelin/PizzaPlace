@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="BtnBase" TargetType="Button">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+
+    <Style x:Key="MainButtonStyle" TargetType="Button" BasedOn="{StaticResource BtnBase}">
+        <Setter Property="Background" Value="#FFB84C"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#d4902a"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
