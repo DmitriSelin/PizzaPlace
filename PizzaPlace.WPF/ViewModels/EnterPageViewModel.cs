@@ -2,29 +2,44 @@
 using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using System.Windows.Input;
+using System.Windows.Controls;
+using PizzaPlace.WPF.Views.Pages;
 
 namespace PizzaPlace.WPF.ViewModels
 {
     internal class EnterPageViewModel : ViewModel
     {
-        #region Commands
-        
-        public ICommand OpenMainPageCommand { get; }
+        private Page mainUserPage;
+        private Page registrationPage;
 
-        private void OnOpenMainPageCommandExecuted(object p)
+        private Page currentPage;
+        public Page CurrentPage
         {
-            
+            get => currentPage;
+            set => Set<Page>(ref currentPage, value);
         }
 
-        private bool CanOpenMainPageCommandExecute(object p) => true;
+        #region Commands
+
+        public ICommand OpenMainUserPageCommand { get; }
+
+        private void OnOpenMainUserPageCommandExecuted(object p)
+        {
+            CurrentPage = mainUserPage;
+        }
+
+        private bool CanOpenMainUserPageCommandExecute(object p) => true;
 
         #endregion
 
         public EnterPageViewModel()
         {
+            mainUserPage = new MainUserPage();
+            registrationPage = new RegistrationPage();
+
             #region Commands
 
-            OpenMainPageCommand = new LambdaCommand(OnOpenMainPageCommandExecuted, CanOpenMainPageCommandExecute);
+            OpenMainUserPageCommand = new LambdaCommand(OnOpenMainUserPageCommandExecuted, CanOpenMainUserPageCommandExecute);
 
             #endregion
         }

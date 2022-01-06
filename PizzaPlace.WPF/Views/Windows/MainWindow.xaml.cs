@@ -1,5 +1,4 @@
-﻿using PizzaPlace.WPF.Views.Pages;
-using System.Windows;
+﻿using System.Windows;
 
 namespace PizzaPlace.WPF
 {
@@ -8,8 +7,6 @@ namespace PizzaPlace.WPF
         public MainWindow()
         {
             InitializeComponent();
-
-            MainFrame.Content = new EnterPage();
         }
     }
 }
