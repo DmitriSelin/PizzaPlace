@@ -1,5 +1,4 @@
 ﻿using PizzaPlace.WPF.ViewModels.Base;
-using System.Windows.Controls;
 
 namespace PizzaPlace.WPF.ViewModels
 {

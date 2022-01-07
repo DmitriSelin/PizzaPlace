@@ -2,9 +2,9 @@
 
 namespace PizzaPlace.WPF.Views.UserControls
 {
-    public partial class Enter : UserControl
+    public partial class MainUser : UserControl
     {
-        public Enter()
+        public MainUser()
         {
             InitializeComponent();
         }

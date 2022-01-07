@@ -8,26 +8,19 @@ namespace PizzaPlace.WPF.ViewModels
     {
         #region Commands
 
-        public ICommand OpenMainUserPageCommand { get; }
 
-        private void OnOpenMainUserPageCommandExecuted(object p)
-        {
-
-        }
-
-        private bool CanOpenMainUserPageCommandExecute(object p) => true;
 
         #endregion
 
-        public EnterViewModel()
-        {
+        //public EnterViewModel()
+        //{
 
 
             #region Commands
 
-            OpenMainUserPageCommand = new LambdaCommand(OnOpenMainUserPageCommandExecuted, CanOpenMainUserPageCommandExecute);
+            
 
             #endregion
-        }
+        //}
     }
 }
