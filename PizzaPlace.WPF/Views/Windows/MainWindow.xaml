@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
+        xmlns:views="clr-namespace:PizzaPlace.WPF.Views.UserControls"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:PizzaPlace.WPF"
         mc:Ignorable="d"
@@ -39,9 +40,14 @@
                                  Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30"/>
             </WrapPanel>
         </Grid>
-        <Frame Grid.Column="0" Grid.ColumnSpan="3"
+        <ContentControl Grid.Column="0" Grid.ColumnSpan="3"
                Grid.Row="1"
-               NavigationUIVisibility="Hidden"
-               Content="{Binding CurrentPage}"/>
+               Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:EnterViewModel}">
+                    <views:EnterUserControl/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
     </Grid>
 </Window>
