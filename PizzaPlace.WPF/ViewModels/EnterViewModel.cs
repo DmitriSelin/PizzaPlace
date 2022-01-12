@@ -1,26 +1,27 @@
 ﻿using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
+using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
-    internal class EnterViewModel : ViewModel
+    public class EnterViewModel : ViewModel
     {
+
         #region Commands
 
-
+        
 
         #endregion
 
-        //public EnterViewModel()
-        //{
-
-
+        public EnterViewModel()
+        {
             #region Commands
 
             
 
             #endregion
-        //}
+        }
     }
 }

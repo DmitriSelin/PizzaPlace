@@ -58,8 +58,8 @@
                 <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
                              VerticalContentAlignment="Center"
                              Style="{StaticResource PasswordStyle}" Background="LightGray"/>
-                <Button Grid.Column="0" Grid.Row="6" Command="{Binding OpenMainUserPageCommand}"
-                        Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}" Cursor="Hand"/>
+                <Button Grid.Column="0" Grid.Row="6"
+                        Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}"/>
                 <Button Grid.Column="1" Grid.Row="6" Style="{StaticResource MainButtonStyle}"
                         Content="Log In" Margin="20, 15"/>
             </Grid>
