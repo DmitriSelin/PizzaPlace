@@ -28,16 +28,46 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <WrapPanel Grid.Row="0" HorizontalAlignment="Right">
-                <fa:ImageAwesome Icon="Brands_Facebook"
-                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30"/>
+                <fa:ImageAwesome Icon="Brands_Facebook" Style="{StaticResource ContactImageStyle}"
+                                 Foreground="#1C1F30">
+                    <fa:ImageAwesome.InputBindings>
+                        <MouseBinding Command="{Binding OpenLinkCommand}"
+                                      MouseAction="LeftClick"
+                                      CommandParameter="https://www.facebook.com/"/>
+                    </fa:ImageAwesome.InputBindings>
+                </fa:ImageAwesome>
                 <fa:ImageAwesome Icon="Brands_Twitter"
-                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30" Cursor="Hand"/>
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30">
+                    <fa:ImageAwesome.InputBindings>
+                        <MouseBinding Command="{Binding OpenLinkCommand}"
+                                      MouseAction="LeftClick"
+                                      CommandParameter="https://twitter.com/"/>
+                    </fa:ImageAwesome.InputBindings>
+                </fa:ImageAwesome>
                 <fa:ImageAwesome Icon="Brands_Telegram" 
-                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30" Cursor="Hand"/>
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30">
+                    <fa:ImageAwesome.InputBindings>
+                        <MouseBinding Command="{Binding OpenLinkCommand}"
+                                      MouseAction="LeftClick"
+                                      CommandParameter="https://web.telegram.org/z/"/>
+                    </fa:ImageAwesome.InputBindings>
+                </fa:ImageAwesome>
                 <fa:ImageAwesome Icon="Brands_Instagram"
-                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30"/>
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30">
+                <fa:ImageAwesome.InputBindings>
+                    <MouseBinding Command="{Binding OpenLinkCommand}"
+                                      MouseAction="LeftClick"
+                                      CommandParameter="https://www.instagram.com/"/>
+                </fa:ImageAwesome.InputBindings>
+                </fa:ImageAwesome>
                 <fa:ImageAwesome Icon="Brands_Github"
-                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30"/>
+                                 Style="{StaticResource ContactImageStyle}" Foreground="#1C1F30">
+                    <fa:ImageAwesome.InputBindings>
+                    <MouseBinding Command="{Binding OpenLinkCommand}"
+                                      MouseAction="LeftClick"
+                                      CommandParameter="https://github.com/DmitriSelin/PizzaPlace"/>
+                    </fa:ImageAwesome.InputBindings>
+                </fa:ImageAwesome>
             </WrapPanel>
         </Grid>
         <ContentControl Grid.Column="0" Grid.ColumnSpan="3"
