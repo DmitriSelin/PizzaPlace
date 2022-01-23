@@ -12,7 +12,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        private ViewModel currentViewModel;
+        private ViewModel currentViewModel = new EnterViewModel();
 
         public ViewModel CurrentViewModel
         {
@@ -23,13 +23,25 @@ namespace PizzaPlace.WPF.ViewModels
 
         public MainWindowViewModel()
         {
-            currentViewModel = new EnterViewModel();
-
             #region Commands
 
             OpenLinkCommand = new OpenLinkCommand();
+            EnterViewModel.SignInButtonPressed += GetMainUserViewModel;
+            EnterViewModel.LogInButtonPressed += GetMainEnterViewModel;
 
             #endregion
         }
+
+        #region VM_Methods
+        private void GetMainUserViewModel()
+        {
+            CurrentViewModel = new MainUserViewModel();
+        }
+
+        private void GetMainEnterViewModel()
+        {
+            CurrentViewModel = new MainEnterViewModel();
+        }
+        #endregion
     }
 }

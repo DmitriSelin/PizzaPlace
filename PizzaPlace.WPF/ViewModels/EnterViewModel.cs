@@ -1,5 +1,6 @@
 ﻿using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
+using System;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -8,14 +9,29 @@ namespace PizzaPlace.WPF.ViewModels
     {
         #region Commands
 
-        public ICommand GetMainUserViewModelCommand { get; }
+        #region VM_Commands
 
-        private void OnGetMainUserViewModelCommandExecuted(object p)
+        public static event Action SignInButtonPressed;
+
+        public static event Action LogInButtonPressed;
+
+        public ICommand GetViewModelCommand { get; }
+
+        private void OnGetViewModelCommandExecuted(object p)
         {
-            
+            if (p.ToString() == "MainUserView")
+            {
+                SignInButtonPressed?.Invoke();
+            }
+            else if (p.ToString() == "MainEnterView")
+            {
+                LogInButtonPressed?.Invoke();
+            }
         }
 
-        private bool CanGetMainUserViewModelCommandExecute(object p) => true;
+        private bool CanGetViewModelCommandExecute(object p) => true;
+
+        #endregion
 
         #endregion
 
@@ -23,8 +39,7 @@ namespace PizzaPlace.WPF.ViewModels
         {
             #region Commands
 
-            GetMainUserViewModelCommand = new LambdaCommand(OnGetMainUserViewModelCommandExecuted,
-                                                            CanGetMainUserViewModelCommandExecute);
+            GetViewModelCommand = new LambdaCommand(OnGetViewModelCommandExecuted, CanGetViewModelCommandExecute);
 
             #endregion
         }
