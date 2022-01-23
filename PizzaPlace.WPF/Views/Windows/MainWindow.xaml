@@ -22,6 +22,17 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0">
+                <fa:ImageAwesome Icon="Solid_UserNinja" VerticalAlignment="Center" Margin="10, 8, 10, 0"/>
+                <TextBlock Text="User_Name" Style="{StaticResource NameTextBlockStyle}"
+                           TextAlignment="Center" VerticalAlignment="Center"/>
+            </WrapPanel>
+        </Grid>
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -29,7 +40,7 @@
             </Grid.RowDefinitions>
             <WrapPanel Grid.Row="0" HorizontalAlignment="Right">
                 <fa:ImageAwesome Icon="Brands_Facebook" Style="{StaticResource ContactImageStyle}"
-                                 Foreground="#1C1F30">
+                                 Foreground="#1C1F30" Cursor="Hand">
                     <fa:ImageAwesome.InputBindings>
                         <MouseBinding Command="{Binding OpenLinkCommand}"
                                       MouseAction="LeftClick"

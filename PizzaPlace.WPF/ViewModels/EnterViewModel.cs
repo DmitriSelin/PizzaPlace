@@ -1,17 +1,21 @@
 ﻿using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
-using System;
-using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
     public class EnterViewModel : ViewModel
     {
-
         #region Commands
 
-        
+        public ICommand GetMainUserViewModelCommand { get; }
+
+        private void OnGetMainUserViewModelCommandExecuted(object p)
+        {
+            
+        }
+
+        private bool CanGetMainUserViewModelCommandExecute(object p) => true;
 
         #endregion
 
@@ -19,7 +23,8 @@ namespace PizzaPlace.WPF.ViewModels
         {
             #region Commands
 
-            
+            GetMainUserViewModelCommand = new LambdaCommand(OnGetMainUserViewModelCommandExecuted,
+                                                            CanGetMainUserViewModelCommandExecute);
 
             #endregion
         }

@@ -1,6 +1,5 @@
 ﻿using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
-using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -13,7 +12,6 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-
         private ViewModel currentViewModel;
 
         public ViewModel CurrentViewModel
@@ -21,6 +19,7 @@ namespace PizzaPlace.WPF.ViewModels
             get => currentViewModel;
             set => Set(ref currentViewModel, value);
         }
+
 
         public MainWindowViewModel()
         {
