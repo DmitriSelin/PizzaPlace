@@ -91,7 +91,7 @@
                 <DataTemplate DataType="{x:Type vm:MainUserViewModel}">
                     <views:MainUser/>
                 </DataTemplate>
-                <DataTemplate DataType="{x:Type vm:MainEnterViewModel}">
+                <DataTemplate  DataType="{x:Type vm:MainEnterViewModel}">
                     <views:MainEnter/>
                 </DataTemplate>
             </ContentControl.Resources>
