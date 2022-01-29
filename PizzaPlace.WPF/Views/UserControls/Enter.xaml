@@ -11,7 +11,7 @@
     <UserControl.DataContext>
         <vm:EnterViewModel/>
     </UserControl.DataContext>
-    <Grid Background="#05666C">
+    <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -44,15 +44,15 @@
                 <WrapPanel Grid.Column="0" Grid.Row="2">
                     <fa:ImageAwesome Icon="Solid_UserCircle"
                                      Margin="5, 0, 10, 0" Foreground="#1C1F30"/>
-                    <TextBlock Text="Email" Foreground="#1C1F30"
+                    <TextBlock Text="Email" Foreground="{StaticResource IconTextBrush}"
                                Style="{StaticResource BoldTextBlockStyle}"/>
                 </WrapPanel>
                 <TextBox Style="{StaticResource LoginStyle}" Grid.Column="0" Grid.Row="3"
                          Grid.ColumnSpan="2" VerticalContentAlignment="Center" Background="LightGray" BorderThickness="0"/>
                 <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
                     <fa:ImageAwesome Icon="Solid_Lock"
-                                     Margin="5, 0, 10, 3" Foreground="#1C1F30"/>
-                    <TextBlock Text="Password" Foreground="#1C1F30"
+                                     Margin="5, 0, 10, 3" Foreground="{StaticResource IconTextBrush}"/>
+                    <TextBlock Text="Password" Foreground="{StaticResource IconTextBrush}"
                                Style="{StaticResource BoldTextBlockStyle}"/>
                 </WrapPanel>
                 <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
