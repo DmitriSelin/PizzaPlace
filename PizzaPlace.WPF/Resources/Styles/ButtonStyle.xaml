@@ -14,8 +14,6 @@
         <Setter Property="MaxHeight" Value="55"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="1"/>
         <Setter Property="Template" Value="{DynamicResource MainBorderTemplate}"/>
     </Style>
@@ -38,6 +36,43 @@
             <Trigger Property="IsMouseOver" Value="true">
                 <Setter Property="Background" TargetName="border" Value="#388DEA"/>
                 <Setter Property="BorderBrush" TargetName="border" Value="DarkGray"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" TargetName="border" Value="#3CA4E5"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="DarkGray"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="BorderBrush" TargetName="border" Value="DarkGray"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="StackButtonStyle" BasedOn="{StaticResource BtnBase}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#7E7E80"/>
+        <Setter Property="BorderBrush" Value="DarkGray"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template" Value="{DynamicResource StackButtonTemplate}"/>
+    </Style>
+
+    <ControlTemplate x:Key="StackButtonTemplate" TargetType="{x:Type Button}">
+        <Border                 x:Name="border" CornerRadius="1"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                SnapsToDevicePixels="true">
+            <ContentPresenter x:Name="contentPresenter"
+                                              Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="WhiteSmoke"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
                 <Setter Property="Background" TargetName="border" Value="#3CA4E5"/>

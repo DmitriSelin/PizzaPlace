@@ -20,8 +20,10 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="{StaticResource IconTextBrush}"
+                   VerticalAlignment="Bottom" Height="3"/>
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -68,17 +70,17 @@
                 <fa:ImageAwesome Icon="Brands_Instagram"
                                  Style="{StaticResource ContactImageStyle}"
                                  Foreground="{StaticResource IconTextBrush}">
-                <fa:ImageAwesome.InputBindings>
-                    <MouseBinding Command="{Binding OpenLinkCommand}"
+                    <fa:ImageAwesome.InputBindings>
+                        <MouseBinding Command="{Binding OpenLinkCommand}"
                                       MouseAction="LeftClick"
                                       CommandParameter="https://www.instagram.com/"/>
-                </fa:ImageAwesome.InputBindings>
+                    </fa:ImageAwesome.InputBindings>
                 </fa:ImageAwesome>
                 <fa:ImageAwesome Icon="Brands_Github"
                                  Style="{StaticResource ContactImageStyle}"
                                  Foreground="{StaticResource IconTextBrush}">
                     <fa:ImageAwesome.InputBindings>
-                    <MouseBinding Command="{Binding OpenLinkCommand}"
+                        <MouseBinding Command="{Binding OpenLinkCommand}"
                                       MouseAction="LeftClick"
                                       CommandParameter="https://github.com/DmitriSelin/PizzaPlace"/>
                     </fa:ImageAwesome.InputBindings>

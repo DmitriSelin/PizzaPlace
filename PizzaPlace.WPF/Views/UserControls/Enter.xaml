@@ -21,7 +21,8 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border  Grid.Column="1" Grid.Row="0" CornerRadius="20" Background="#F8F8FA">
+        <Border  Grid.Column="1" Grid.Row="0" CornerRadius="20" Background="#F8F8FA"
+                 Margin="0, 6, 0, 0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
