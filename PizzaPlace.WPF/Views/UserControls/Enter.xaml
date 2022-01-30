@@ -21,8 +21,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border  Grid.Column="1" Grid.Row="0" CornerRadius="20" Background="#F8F8FA"
-                 Margin="0, 6, 0, 0">
+        <Border  Grid.Column="1" Grid.Row="0" CornerRadius="20" Background="#F8F8FA">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -44,12 +43,13 @@
                                  Grid.Column="0"  Grid.Row="1" Margin="0, 0, 0, 10" />
                 <WrapPanel Grid.Column="0" Grid.Row="2">
                     <fa:ImageAwesome Icon="Solid_UserCircle"
-                                     Margin="5, 0, 10, 0" Foreground="#1C1F30"/>
+                                     Margin="5, 0, 10, 0" Foreground="{StaticResource IconTextBrush}"/>
                     <TextBlock Text="Email" Foreground="{StaticResource IconTextBrush}"
                                Style="{StaticResource BoldTextBlockStyle}"/>
                 </WrapPanel>
                 <TextBox Style="{StaticResource LoginStyle}" Grid.Column="0" Grid.Row="3"
-                         Grid.ColumnSpan="2" VerticalContentAlignment="Center" Background="LightGray" BorderThickness="0"/>
+                         Grid.ColumnSpan="2" VerticalContentAlignment="Center"
+                         Background="{StaticResource LightGrayBrush}" BorderThickness="0"/>
                 <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
                     <fa:ImageAwesome Icon="Solid_Lock"
                                      Margin="5, 0, 10, 3" Foreground="{StaticResource IconTextBrush}"/>
@@ -58,7 +58,7 @@
                 </WrapPanel>
                 <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
                              VerticalContentAlignment="Center"
-                             Style="{StaticResource PasswordStyle}" Background="LightGray"/>
+                             Style="{StaticResource PasswordStyle}" Background="{StaticResource LightGrayBrush}"/>
                 <Button Grid.Column="0" Grid.Row="6" Command="{Binding GetViewModelCommand}"
                         CommandParameter="MainUserView"
                         Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}"/>
