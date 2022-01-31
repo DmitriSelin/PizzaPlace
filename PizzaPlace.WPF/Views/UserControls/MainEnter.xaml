@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PizzaPlace.WPF.Views.UserControls"
+             xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="1600">
+    <UserControl.DataContext>
+        <vm:MainEnterViewModel/>
+    </UserControl.DataContext>
     <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -60,9 +64,11 @@
                          Background="{StaticResource LightGrayBrush}"/>
                 <UniformGrid Grid.Row="11" Columns="2">
                     <Button Style="{StaticResource MainButtonStyle}" Margin="10, 5"
-                            VerticalAlignment="Stretch" Content="Back"/>
+                            VerticalAlignment="Stretch" Content="Back"
+                            Command="{Binding BackHomeCommand}"/>
                     <Button Style="{StaticResource MainButtonStyle}" Margin="10, 5"
-                            VerticalAlignment="Stretch" Content="Log In"/>
+                            VerticalAlignment="Stretch" Content="Log In"
+                            Command="{Binding OpenMainUserViewCommand}" Cursor="Hand"/>
                 </UniformGrid>
             </Grid>
         </Border>

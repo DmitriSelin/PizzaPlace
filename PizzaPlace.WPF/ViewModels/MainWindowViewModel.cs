@@ -28,9 +28,13 @@ namespace PizzaPlace.WPF.ViewModels
 
             #region Commands
 
+            #region Events
             OpenLinkCommand = new OpenLinkCommand();
             EnterViewModel.SignInButtonPressed += GetMainUserViewModel;
             EnterViewModel.LogInButtonPressed += GetMainEnterViewModel;
+            MainEnterViewModel.BackHomeEvent += GetEnterViewModel;
+            MainEnterViewModel.OpenUserViewEvent += GetMainUserViewModel;
+            #endregion
 
             #endregion
         }
@@ -44,6 +48,11 @@ namespace PizzaPlace.WPF.ViewModels
         private void GetMainEnterViewModel()
         {
             CurrentViewModel = new MainEnterViewModel();
+        }
+
+        private void GetEnterViewModel()
+        {
+            CurrentViewModel = new EnterViewModel();
         }
         #endregion
     }

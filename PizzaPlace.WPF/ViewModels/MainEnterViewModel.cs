@@ -9,14 +9,34 @@ namespace PizzaPlace.WPF.ViewModels
     {
         public static event Action BackHomeEvent;
 
+        public static event Action OpenUserViewEvent;
+
         #region Commands
 
+        #region HomeCommand
         public ICommand BackHomeCommand { get; }
 
-        private void OnBackHomeCommandExecuted(object parametr)
+        private void OnBackHomeCommandExecuted(object p)
         {
             BackHomeEvent?.Invoke();
         }
+
+        private bool CanBackHomeCommandExecute(object p) => true;
+
+        #endregion
+
+        #region OpenMainUserViewCommand
+
+        public ICommand OpenMainUserViewCommand { get; }
+
+        private void OnOpenMainUserViewCommandExecuted(object p)
+        {
+            OpenUserViewEvent?.Invoke();
+        }
+
+        private bool CanOpenMainUserViewCommandExecute(object p) => true;
+
+        #endregion
 
         #endregion
 
@@ -24,7 +44,10 @@ namespace PizzaPlace.WPF.ViewModels
         {
             #region Commands
 
-            BackHomeCommand = new LambdaCommand(OnBackHomeCommandExecuted, CanExecute);
+            BackHomeCommand = new LambdaCommand(OnBackHomeCommandExecuted, CanBackHomeCommandExecute);
+
+            OpenMainUserViewCommand = new LambdaCommand(OnOpenMainUserViewCommandExecuted,
+                                                        CanOpenMainUserViewCommandExecute);
 
             #endregion
         }
