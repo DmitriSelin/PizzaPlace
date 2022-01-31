@@ -11,7 +11,7 @@ namespace PizzaPlace.WPF.Infrastructure.Commands.BaseCommand
             remove => CommandManager.RequerySuggested -= value;
         }
 
-        public virtual bool CanExecute(object parameter) => true;
+        public abstract bool CanExecute(object parameter);
 
         public abstract void Execute(object parameter);
     }
