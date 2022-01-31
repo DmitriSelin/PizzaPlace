@@ -6,45 +6,65 @@
              xmlns:local="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="900" d:DesignWidth="1600">
     <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="1" CornerRadius="30" Background="#F8F8FA" Margin="0, 0, 0, 15">
-            <StackPanel>
-                <TextBlock Text="Registration" Style="{StaticResource NameTextBlockStyle}"/>
-                <TextBlock HorizontalAlignment="Left" Padding="8"
+        <Border Grid.Column="1" CornerRadius="30" Background="#F8F8FA"
+                Margin="0, 0, 0, 15" Padding="0, 0, 0, 10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Registration" Margin="0, 5, 0, 0"
+                           Style="{StaticResource NameTextBlockStyle}"/>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="8, 0, 0, 0"
                            Text="Your Name:" Style="{StaticResource BoldTextBlockStyle}"/>
-                <TextBox Padding="8" Style="{StaticResource LoginStyle}"
+                <TextBox Grid.Row="2" Style="{StaticResource LoginStyle}"
                          Background="{StaticResource LightGrayBrush}"/>
-                <TextBlock Text="Your SurName:" Style="{StaticResource BoldTextBlockStyle}"
-                           HorizontalAlignment="Left" Padding="8"/>
-                <TextBox Padding="8" Style="{StaticResource LoginStyle}"
+                <TextBlock Grid.Row="3" Text="Your SurName:" Style="{StaticResource BoldTextBlockStyle}"
+                           HorizontalAlignment="Left" Margin="8, 0, 0, 0"/>
+                <TextBox Grid.Row="4" Style="{StaticResource LoginStyle}"
                          Background="{StaticResource LightGrayBrush}"/>
-                <WrapPanel>
-                    <fa:ImageAwesome Icon="Solid_Envelope" Height="20" Margin="8, 0, 0, 0"/>
+                <WrapPanel Grid.Row="5" VerticalAlignment="Center">
+                    <fa:ImageAwesome Icon="Solid_Envelope" Height="20" Margin="8, 0"/>
                     <TextBlock Text="Email:" Style="{StaticResource BoldTextBlockStyle}"
-                           HorizontalAlignment="Left" Padding="8"/>
+                           HorizontalAlignment="Left"/>
                 </WrapPanel>
-                <TextBox Padding="8" Style="{StaticResource LoginStyle}"
+                <TextBox Grid.Row="6" Style="{StaticResource LoginStyle}"
                          Background="{StaticResource LightGrayBrush}"/>
-                <WrapPanel>
-                    <fa:ImageAwesome Icon="Solid_Lock" Height="20" Margin="8, 0, 0, 0"/>
+                <WrapPanel Grid.Row="7" VerticalAlignment="Center">
+                    <fa:ImageAwesome Icon="Solid_Lock" Height="20" Margin="8, 0"/>
                     <TextBlock Text="Password:" Style="{StaticResource BoldTextBlockStyle}"
-                           HorizontalAlignment="Left" Padding="8"/>
+                           HorizontalAlignment="Left"/>
                 </WrapPanel>
-                <PasswordBox Padding="8" Style="{StaticResource PasswordStyle}"
+                <PasswordBox Grid.Row="8" Style="{StaticResource PasswordStyle}"
                          Background="{StaticResource LightGrayBrush}"/>
-                <TextBlock Text="Repeat Password:" Style="{StaticResource BoldTextBlockStyle}"
-                           HorizontalAlignment="Left" Padding="8"/>
-                <PasswordBox Padding="8" Style="{StaticResource PasswordStyle}"
+                <TextBlock Grid.Row="9" Text="Repeat Password:" Style="{StaticResource BoldTextBlockStyle}"
+                           HorizontalAlignment="Left" Margin="8, 0, 0, 0"/>
+                <PasswordBox Grid.Row="10" Style="{StaticResource PasswordStyle}"
                          Background="{StaticResource LightGrayBrush}"/>
-                <Button Height="40" Width="100" Background="Red">
-                </Button>
-            </StackPanel>
+                <UniformGrid Grid.Row="11" Columns="2">
+                    <Button Style="{StaticResource MainButtonStyle}" Margin="10, 5"
+                            VerticalAlignment="Stretch" Content="Back"/>
+                    <Button Style="{StaticResource MainButtonStyle}" Margin="10, 5"
+                            VerticalAlignment="Stretch" Content="Log In"/>
+                </UniformGrid>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>

@@ -22,8 +22,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="{StaticResource IconTextBrush}"
-                   VerticalAlignment="Bottom" Height="3"/>
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -87,6 +85,8 @@
                 </fa:ImageAwesome>
             </WrapPanel>
         </Grid>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="{StaticResource IconTextBrush}"
+                   VerticalAlignment="Bottom" Height="3"/>
         <ContentControl Grid.Column="0" Grid.ColumnSpan="3"
                Grid.Row="1"
                Content="{Binding CurrentViewModel}">
