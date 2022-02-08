@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace.WPF", "PizzaPlac
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestPizzaProject", "TestPizzaProject", "{A8327000-4331-4C54-B936-BD24FD54FBF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWPFApplication", "TestPizzaProject\TestWPFApplication\TestWPFApplication.csproj", "{18853EA3-285E-4257-BF1C-C93061621C52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWPFApplication", "TestPizzaProject\TestWPFApplication\TestWPFApplication.csproj", "{18853EA3-285E-4257-BF1C-C93061621C52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApplication", "TestPizzaProject\TestConsoleApplication\TestConsoleApplication.csproj", "{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApplication", "TestPizzaProject\TestConsoleApplication\TestConsoleApplication.csproj", "{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPlaceDB.DAL", "PizzaPlaceDB.DAL\PizzaPlaceDB.DAL.csproj", "{D88D3D27-3638-4345-9119-941D00725624}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AC7C7D3-0B08-4FFF-B307-4EB30047D362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88D3D27-3638-4345-9119-941D00725624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88D3D27-3638-4345-9119-941D00725624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88D3D27-3638-4345-9119-941D00725624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88D3D27-3638-4345-9119-941D00725624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
