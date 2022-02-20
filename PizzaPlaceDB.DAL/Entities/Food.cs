@@ -13,7 +13,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public int ExpirationDate { get; set; }
 
-        public Food(string name, double price, string description, DateTime manufactureDate, int expirationDate)
+        public Food(string name, double price, string description, int expirationDate)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
