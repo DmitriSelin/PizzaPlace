@@ -1,5 +1,6 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
+using System.Collections.Generic;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
@@ -14,6 +15,10 @@ namespace PizzaPlaceDB.DAL.Entities
         public string FavoriteFood { get; set; }
 
         public int Bonus { get; set; }
+
+        public ICollection<Basket> Baskets { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
 
         public User(string name, string surName, string email, string password, DateTime birthDate)
         {
@@ -58,5 +63,7 @@ namespace PizzaPlaceDB.DAL.Entities
             FavoriteFood = "UnKnown";
             Bonus = 0;
         }
+
+        public User() { }
     }
 }

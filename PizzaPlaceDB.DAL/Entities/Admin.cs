@@ -1,5 +1,6 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
+using System.Collections.Generic;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
@@ -10,6 +11,8 @@ namespace PizzaPlaceDB.DAL.Entities
         public string Password { get; set; }
 
         public int Rating { get; set; }
+
+        public ICollection<Food> Food { get; set; }
 
         public Admin(string name, string surName, string email, string password)
         {
@@ -47,5 +50,7 @@ namespace PizzaPlaceDB.DAL.Entities
             Password = password;
             Rating = 0;
         }
+
+        public Admin() { }
     }
 }

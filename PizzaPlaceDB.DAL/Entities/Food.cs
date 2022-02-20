@@ -1,5 +1,6 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
+using System.Collections.Generic;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
@@ -12,6 +13,16 @@ namespace PizzaPlaceDB.DAL.Entities
         public DateTime ManufactureDate { get; set; }
 
         public int ExpirationDate { get; set; }
+
+        public ICollection<Basket> Baskets { get; set; }
+
+        public int AdminId { get; set; }
+
+        public virtual Admin Admin { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
 
         public Food(string name, double price, string description, int expirationDate)
         {
@@ -41,5 +52,7 @@ namespace PizzaPlaceDB.DAL.Entities
             ManufactureDate = DateTime.Now.Date;
             ExpirationDate = expirationDate;
         }
+
+        public Food() { }
     }
 }

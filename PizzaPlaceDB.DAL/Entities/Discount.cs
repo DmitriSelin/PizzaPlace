@@ -1,11 +1,14 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
+using System.Collections.Generic;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
     public class Discount : NamedEntity
     {
         public double Percent { get; set; }
+
+        public ICollection<Basket> Baskets { get; set; }
 
         public Discount(string name, double percent)
         {
@@ -14,7 +17,7 @@ namespace PizzaPlaceDB.DAL.Entities
                 throw new ArgumentNullException("Discount's name can not be null", nameof(name));
             }
 
-            if (percent < 0 || percent >= 70)
+            if (percent < 0 || percent >= 1)
             {
                 throw new ArgumentException("Not correct percent", nameof(percent));
             }
@@ -22,5 +25,7 @@ namespace PizzaPlaceDB.DAL.Entities
             Name = name;
             Percent = percent;
         }
+
+        public Discount() { }
     }
 }
