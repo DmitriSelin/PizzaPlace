@@ -1,6 +1,8 @@
-﻿namespace PizzaPlaceDB.DAL.Entities.Base
+﻿using PizzaPlace.BL.Interfaces;
+
+namespace PizzaPlaceDB.DAL.Entities.Base
 {
-    public abstract class Entity
+    public abstract class Entity : IEntity
     {
         public int Id { get; set; }
     }
