@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApplication", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlaceDB.DAL", "PizzaPlaceDB.DAL\PizzaPlaceDB.DAL.csproj", "{D88D3D27-3638-4345-9119-941D00725624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPlace.BL", "PizzaPlace.BL\PizzaPlace.BL.csproj", "{340A472F-411A-41C8-A9A8-1609E54FD2F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace.BL", "PizzaPlace.BL\PizzaPlace.BL.csproj", "{340A472F-411A-41C8-A9A8-1609E54FD2F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPlace.Interfaces", "PizzaPlace.Interfaces\PizzaPlace.Interfaces.csproj", "{79FDE11C-2BC0-47A6-9E15-C6B805170E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{340A472F-411A-41C8-A9A8-1609E54FD2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{340A472F-411A-41C8-A9A8-1609E54FD2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{340A472F-411A-41C8-A9A8-1609E54FD2F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79FDE11C-2BC0-47A6-9E15-C6B805170E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79FDE11C-2BC0-47A6-9E15-C6B805170E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79FDE11C-2BC0-47A6-9E15-C6B805170E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79FDE11C-2BC0-47A6-9E15-C6B805170E9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

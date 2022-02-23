@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PizzaPlace.BL\PizzaPlace.BL.csproj" />
+    <ProjectReference Include="..\PizzaPlace.Interfaces\PizzaPlace.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>
