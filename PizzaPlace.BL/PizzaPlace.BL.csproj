@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\PizzaPlaceDB.DAL\PizzaPlaceDB.DAL.csproj" />
   </ItemGroup>
 
 </Project>

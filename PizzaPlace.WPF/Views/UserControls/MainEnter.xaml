@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PizzaPlace.WPF.Views.UserControls"
+             xmlns:l="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
@@ -39,18 +39,21 @@
                 <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="8, 0, 0, 0"
                            Text="Your Name:" Style="{StaticResource BoldTextBlockStyle}"/>
                 <TextBox Grid.Row="2" Style="{StaticResource LoginStyle}"
-                         Background="{StaticResource LightGrayBrush}"/>
+                         Background="{StaticResource LightGrayBrush}"
+                         Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="3" Text="Your SurName:" Style="{StaticResource BoldTextBlockStyle}"
                            HorizontalAlignment="Left" Margin="8, 0, 0, 0"/>
                 <TextBox Grid.Row="4" Style="{StaticResource LoginStyle}"
-                         Background="{StaticResource LightGrayBrush}"/>
+                         Background="{StaticResource LightGrayBrush}"
+                         Text="{Binding SurName, UpdateSourceTrigger=PropertyChanged}"/>
                 <WrapPanel Grid.Row="5" VerticalAlignment="Center">
                     <fa:ImageAwesome Icon="Solid_Envelope" Height="20" Margin="8, 0"/>
                     <TextBlock Text="Email:" Style="{StaticResource BoldTextBlockStyle}"
                            HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <TextBox Grid.Row="6" Style="{StaticResource LoginStyle}"
-                         Background="{StaticResource LightGrayBrush}"/>
+                         Background="{StaticResource LightGrayBrush}"
+                         Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
                 <WrapPanel Grid.Row="7" VerticalAlignment="Center">
                     <fa:ImageAwesome Icon="Solid_Lock" Height="20" Margin="8, 0"/>
                     <TextBlock Text="Password:" Style="{StaticResource BoldTextBlockStyle}"
