@@ -8,4 +8,8 @@
     <ProjectReference Include="..\PizzaPlaceDB.DAL\PizzaPlaceDB.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
