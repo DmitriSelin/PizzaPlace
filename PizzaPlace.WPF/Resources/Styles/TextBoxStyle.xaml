@@ -12,5 +12,6 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="#2C3045"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
 </ResourceDictionary>
