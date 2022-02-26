@@ -6,6 +6,8 @@
              xmlns:l="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:behaviors="clr-namespace:PizzaPlace.WPF.Behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -60,7 +62,11 @@
                            HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <PasswordBox Grid.Row="8" Style="{StaticResource PasswordStyle}"
-                         Background="{StaticResource LightGrayBrush}"/>
+                         Background="{StaticResource LightGrayBrush}">
+                    <b:Interaction.Behaviors>
+                        <behaviors:PasswordBehavior Password="{Binding Password, Mode=TwoWay}"/>
+                    </b:Interaction.Behaviors>
+                </PasswordBox>
                 <TextBlock Grid.Row="9" Text="Repeat Password:" Style="{StaticResource BoldTextBlockStyle}"
                            HorizontalAlignment="Left" Margin="8, 0, 0, 0"/>
                 <PasswordBox Grid.Row="10" Style="{StaticResource PasswordStyle}"
