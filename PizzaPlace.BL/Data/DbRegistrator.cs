@@ -6,7 +6,7 @@ namespace PizzaPlace.BL.Data
 {
     public static class DbRegistrator
     {
-        public static IServiceCollection AddDatabase(IServiceCollection services, IConfiguration configuration) =>
+        public static IServiceCollection AddDatabase(this IServiceCollection services) =>
             services.AddDbContext<PizzaPlaceContext>();
     }
 }

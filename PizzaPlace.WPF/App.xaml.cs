@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PizzaPlace.BL.Data;
 using PizzaPlace.BL.Services;
 using PizzaPlace.WPF.ViewModels;
 using System;
@@ -17,6 +18,7 @@ namespace PizzaPlace.WPF
         public static IServiceProvider Services => Host.Services;
 
         public static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+            .AddDatabase()
             .AddServices()
             .AddViewModel();
 
