@@ -1,12 +1,14 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
     public class Food : NamedEntity
     {
-        public double Price { get; set; }
+        [Column(TypeName = "decimal (18,2)")]
+        public decimal Price { get; set; }
 
         public string Description { get; set; }
 
@@ -24,14 +26,14 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public virtual Category Category { get; set; }
 
-        public Food(string name, double price, string description, int expirationDate)
+        public Food(string name, decimal price, string description, int expirationDate)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
                 throw new ArgumentNullException("Food's name can not be null", nameof(name));
             }
 
-            if (price <= 0 || price > double.MaxValue)
+            if (price <= 0 || price > decimal.MaxValue)
             {
                 throw new ArgumentException("Not correct price", nameof(price));
             }
