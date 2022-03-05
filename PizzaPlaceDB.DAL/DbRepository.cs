@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PizzaPlaceDB.DAL
 {
-    public class DbRepository<T> : IRepository<T> where T : Entity, new()
+    internal class DbRepository<T> : IRepository<T> where T : Entity, new()
     {
         private readonly PizzaPlaceContext db;
         private readonly DbSet<T> set;
@@ -37,7 +37,7 @@ namespace PizzaPlaceDB.DAL
 
         public T Add(T item)
         {
-            if (item is null) throw new ArgumentException(nameof(item));
+            if (item is null) throw new ArgumentNullException(nameof(item));
 
             db.Entry(item).State = EntityState.Added;
 
@@ -49,7 +49,7 @@ namespace PizzaPlaceDB.DAL
 
         public async Task<T> AddAsync(T item, CancellationToken cancel = default)
         {
-            if (item is null) throw new ArgumentException(nameof(item));
+            if (item is null) throw new ArgumentNullException(nameof(item));
 
             db.Entry(item).State = EntityState.Added;
 
@@ -61,7 +61,7 @@ namespace PizzaPlaceDB.DAL
 
         public void Update(T item)
         {
-            if (item is null) throw new ArgumentException(nameof(item));
+            if (item is null) throw new ArgumentNullException(nameof(item));
 
             db.Entry(item).State = EntityState.Modified;
 
@@ -71,7 +71,7 @@ namespace PizzaPlaceDB.DAL
 
         public async Task UpdateAsync(T item, CancellationToken cancel = default)
         {
-            if (item is null) throw new ArgumentException(nameof(item));
+            if (item is null) throw new ArgumentNullException(nameof(item));
 
             db.Entry(item).State = EntityState.Modified;
 

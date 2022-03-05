@@ -8,7 +8,7 @@ namespace PizzaPlaceDB.DAL.Entities
     {
         public double Percent { get; set; }
 
-        public ICollection<Basket> Baskets { get; set; }
+        public virtual ICollection<Basket> Baskets { get; set; }
 
         public Discount(string name, double percent)
         {

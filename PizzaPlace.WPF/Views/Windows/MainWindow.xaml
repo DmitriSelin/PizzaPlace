@@ -31,27 +31,18 @@
                            TextAlignment="Center" VerticalAlignment="Center"/>
             </WrapPanel>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="2">
+        <Grid Grid.Row="0" Grid.Column="2" Cursor="Hand">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <WrapPanel Grid.Row="0" HorizontalAlignment="Right">
-                <fa:ImageAwesome Icon="Brands_Facebook" Style="{StaticResource ContactImageStyle}"
-                                 Foreground="{StaticResource IconTextBrush}" Cursor="Hand">
-                    <fa:ImageAwesome.InputBindings>
-                        <MouseBinding Command="{Binding OpenLinkCommand}"
-                                      MouseAction="LeftClick"
-                                      CommandParameter="https://www.facebook.com/"/>
-                    </fa:ImageAwesome.InputBindings>
-                </fa:ImageAwesome>
-                <fa:ImageAwesome Icon="Brands_Twitter"
-                                 Style="{StaticResource ContactImageStyle}" 
+                <fa:ImageAwesome Icon="Brands_Youtube" Style="{StaticResource ContactImageStyle}"
                                  Foreground="{StaticResource IconTextBrush}">
                     <fa:ImageAwesome.InputBindings>
                         <MouseBinding Command="{Binding OpenLinkCommand}"
                                       MouseAction="LeftClick"
-                                      CommandParameter="https://twitter.com/"/>
+                                      CommandParameter="https://www.youtube.com/"/>
                     </fa:ImageAwesome.InputBindings>
                 </fa:ImageAwesome>
                 <fa:ImageAwesome Icon="Brands_Telegram" 

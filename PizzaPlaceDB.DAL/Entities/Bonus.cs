@@ -8,7 +8,7 @@ namespace PizzaPlaceDB.DAL.Entities
     {
         public double Discount { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public virtual ICollection<User> Users { get; set; }
 
         public Bonus(string name, double discount)
         {

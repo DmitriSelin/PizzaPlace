@@ -12,7 +12,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public int Rating { get; set; }
 
-        public ICollection<Food> Food { get; set; }
+        public virtual ICollection<Food> Food { get; set; }
 
         public Admin(string name, string surName, string email, string password)
         {

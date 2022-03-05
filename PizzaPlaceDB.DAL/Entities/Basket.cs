@@ -17,6 +17,6 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public virtual Discount Discount { get; set; }
 
-        public ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

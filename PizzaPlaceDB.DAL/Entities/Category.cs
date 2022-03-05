@@ -6,7 +6,7 @@ namespace PizzaPlaceDB.DAL.Entities
 {
     public class Category : NamedEntity
     {
-        public ICollection<Food> Food { get; set; }
+        public virtual ICollection<Food> Food { get; set; }
 
         public Category(string name)
         {

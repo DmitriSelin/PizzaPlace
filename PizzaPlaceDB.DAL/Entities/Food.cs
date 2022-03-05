@@ -17,7 +17,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public int ExpirationDate { get; set; }
 
-        public ICollection<Basket> Baskets { get; set; }
+        public virtual ICollection<Basket> Baskets { get; set; }
 
         public int AdminId { get; set; }
 
