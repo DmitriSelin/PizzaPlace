@@ -14,27 +14,29 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public string FavoriteFood { get; set; }
 
-        public int Bonus { get; set; }
-
         public ICollection<Basket> Baskets { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+
+        public int BonusId { get; set; }
+
+        public virtual Bonus Bonus { get; set; }
 
         public User(string name, string surName, string email, string password, DateTime birthDate)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException("Name con not be null", nameof(name));
+                throw new ArgumentNullException("Name can not be null", nameof(name));
             }
 
             if (string.IsNullOrWhiteSpace(surName))
             {
-                throw new ArgumentNullException("SurName con not be null", nameof(surName));
+                throw new ArgumentNullException("SurName can not be null", nameof(surName));
             }
 
             if (string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentNullException("Email con not be null", nameof(email));
+                throw new ArgumentNullException("Email can not be null", nameof(email));
             }
             else if (email.Length < 1 || email.Length > 50)
             {
@@ -43,7 +45,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                throw new ArgumentNullException("Password con not be null", nameof(password));
+                throw new ArgumentNullException("Password can not be null", nameof(password));
             }
             else if (password.Length < 8 || password.Length > 50)
             {
@@ -61,7 +63,6 @@ namespace PizzaPlaceDB.DAL.Entities
             Password = password;
             BirthDate = birthDate;
             FavoriteFood = "UnKnown";
-            Bonus = 0;
         }
 
         public User() { }
