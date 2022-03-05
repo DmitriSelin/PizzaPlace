@@ -1,6 +1,7 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
@@ -10,6 +11,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public string Password { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime BirthDate { get; set; }
 
         public string FavoriteFood { get; set; }

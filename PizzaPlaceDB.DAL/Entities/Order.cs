@@ -1,5 +1,6 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
@@ -13,6 +14,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public virtual Basket Basket { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime PurchaseDate { get; set; }
 
         public double TotalPrice { get; set; }

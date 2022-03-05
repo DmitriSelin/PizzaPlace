@@ -12,6 +12,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public string Description { get; set; }
 
+        [Column(TypeName = "date")]
         public DateTime ManufactureDate { get; set; }
 
         public int ExpirationDate { get; set; }
