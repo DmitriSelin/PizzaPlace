@@ -18,5 +18,7 @@ namespace PizzaPlaceDB.DAL.Entities
         public DateTime PurchaseDate { get; set; }
 
         public double TotalPrice { get; set; }
+
+        public override string ToString() => $"Order: {Basket} TotalPrice {TotalPrice}";
     }
 }
