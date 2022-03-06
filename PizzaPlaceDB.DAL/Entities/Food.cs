@@ -57,5 +57,7 @@ namespace PizzaPlaceDB.DAL.Entities
         }
 
         public Food() { }
+
+        public override string ToString() => $"Food {Name} Price {Price}";
     }
 }

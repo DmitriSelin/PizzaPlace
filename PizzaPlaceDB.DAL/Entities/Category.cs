@@ -19,5 +19,7 @@ namespace PizzaPlaceDB.DAL.Entities
         }
 
         public Category() { }
+
+        public override string ToString() => $"Category {Name}";
     }
 }

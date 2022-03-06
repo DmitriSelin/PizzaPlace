@@ -8,13 +8,13 @@ namespace PizzaPlaceDB.DAL
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services) => services
             .AddTransient<IRepository<Admin>, DbRepository<Admin>>()
-            .AddTransient<IRepository<Basket>, DbRepository<Basket>>()
+            .AddTransient<IRepository<Basket>, BasketRepository>()
             .AddTransient<IRepository<Bonus>, DbRepository<Bonus>>()
             .AddTransient<IRepository<Category>, DbRepository<Category>>()
             .AddTransient<IRepository<Discount>, DbRepository<Discount>>()
-            .AddTransient<IRepository<Food>, DbRepository<Food>>()
-            .AddTransient<IRepository<Order>, DbRepository<Order>>()
-            .AddTransient<IRepository<User>, DbRepository<User>>()
+            .AddTransient<IRepository<Food>, FoodRepository>()
+            .AddTransient<IRepository<Order>, OrderRepository>()
+            .AddTransient<IRepository<User>, UserRepository>()
             ;
     }
 }

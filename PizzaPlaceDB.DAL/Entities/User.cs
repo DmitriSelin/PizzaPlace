@@ -68,5 +68,7 @@ namespace PizzaPlaceDB.DAL.Entities
         }
 
         public User() { }
+
+        public override string ToString() => $"User {Name} {SurName}";
     }
 }

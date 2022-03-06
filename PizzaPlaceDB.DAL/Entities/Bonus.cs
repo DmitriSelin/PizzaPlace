@@ -27,5 +27,7 @@ namespace PizzaPlaceDB.DAL.Entities
         }
 
         public Bonus() {}
+
+        public override string ToString() => $"Bonus {Name}";
     }
 }
