@@ -1,11 +1,15 @@
-﻿using PizzaPlace.WPF.Infrastructure.Commands;
+﻿using PizzaPlace.BL.Interfaces;
+using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
+using PizzaPlaceDB.DAL.Entities;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
     public class MainWindowViewModel : ViewModel
     {
+        private readonly IRepository<User> users;
+        private readonly IUserService userService;
 
         #region Commands
 
@@ -22,8 +26,11 @@ namespace PizzaPlace.WPF.ViewModels
         }
 
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(IRepository<User> _users, IUserService _userService)
         {
+            users = _users;
+            userService = _userService;
+
             currentViewModel = new EnterViewModel();
 
             #region Commands
@@ -47,7 +54,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void GetMainEnterViewModel()
         {
-            CurrentViewModel = new MainEnterViewModel();
+            CurrentViewModel = new MainEnterViewModel(users, userService);
         }
 
         private void GetEnterViewModel()

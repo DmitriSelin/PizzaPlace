@@ -1,7 +1,6 @@
 ﻿using PizzaPlaceDB.DAL.Entities.Base;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PizzaPlaceDB.DAL.Entities
 {
@@ -10,9 +9,6 @@ namespace PizzaPlaceDB.DAL.Entities
         public string Email { get; set; }
 
         public string Password { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime BirthDate { get; set; }
 
         public string FavoriteFood { get; set; }
 
@@ -24,7 +20,7 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public virtual Bonus Bonus { get; set; }
 
-        public User(string name, string surName, string email, string password, DateTime birthDate)
+        public User(string name, string surName, string email, string password)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -54,16 +50,10 @@ namespace PizzaPlaceDB.DAL.Entities
                 throw new ArgumentException("Not correct password", nameof(password));
             }
 
-            if (birthDate <= DateTime.Parse("01.01.1920") || birthDate >= DateTime.Now.Date)
-            {
-                throw new ArgumentException("Not correct birthDate", nameof(birthDate));
-            }
-
             Name = name;
             SurName = surName;
             Email = email;
             Password = password;
-            BirthDate = birthDate;
             FavoriteFood = "UnKnown";
         }
 

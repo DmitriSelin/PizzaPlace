@@ -1,5 +1,9 @@
-﻿using PizzaPlace.WPF.Infrastructure.Commands;
+﻿using PizzaPlace.BL.Exceptions;
+using PizzaPlace.BL.Interfaces;
+using PizzaPlace.BL.Services;
+using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
+using PizzaPlaceDB.DAL.Entities;
 using System;
 using System.Windows.Input;
 
@@ -14,6 +18,9 @@ namespace PizzaPlace.WPF.ViewModels
         public static event Action OpenUserViewEvent;
 
         #endregion
+
+        private readonly IRepository<User> users;
+        private IUserService userService;
 
         private string name;
         
@@ -75,7 +82,12 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void OnOpenMainUserViewCommandExecuted(object p)
         {
-            OpenUserViewEvent?.Invoke();
+            try
+            {
+                userService.RegisterUser(Name, SurName, Email, Password, RepeatPassword);
+                OpenUserViewEvent?.Invoke();
+            }
+            catch (PasswordException) { }
         }
 
         private bool CanOpenMainUserViewCommandExecute(object p) => true;
@@ -84,8 +96,11 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public MainEnterViewModel()
+        public MainEnterViewModel(IRepository<User> _users, IUserService _userService)
         {
+            users = _users;
+            userService = _userService;
+
             #region Commands
 
             BackHomeCommand = new LambdaCommand(OnBackHomeCommandExecuted, CanBackHomeCommandExecute);
