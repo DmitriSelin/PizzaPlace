@@ -4,6 +4,7 @@ using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels

@@ -21,7 +21,7 @@ namespace PizzaPlace.BL.Services
         public async Task<User> RegisterUser(string name, string surName, string email,
                                              string password, string repeatPassword)
         {
-            if (repeatPassword != password) throw new PasswordException("Password not equal repeatPassword");
+            if (password != repeatPassword) throw new PasswordException("Password not equal repeatPassword");
 
             try
             {
