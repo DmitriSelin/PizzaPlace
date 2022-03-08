@@ -7,9 +7,6 @@
              xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <vm:MainUserViewModel/>
-    </UserControl.DataContext>
     <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

@@ -1,11 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PizzaPlace.BL.Interfaces;
 
 namespace PizzaPlace.BL.Services
 {
     public static class ServiceRegistrator
     {
         public static IServiceCollection AddServices(this IServiceCollection services) => services
-            .AddTransient<UserService>()
+            .AddTransient<IUserService, UserService>()
             ;
     }
 }

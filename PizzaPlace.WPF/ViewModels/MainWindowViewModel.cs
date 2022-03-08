@@ -9,6 +9,12 @@ namespace PizzaPlace.WPF.ViewModels
     public class MainWindowViewModel : ViewModel
     {
         private readonly IRepository<User> users;
+        private readonly IRepository<Basket> baskets;
+        private readonly IRepository<Bonus> bonuses;
+        private readonly IRepository<Category> categories;
+        private readonly IRepository<Discount> discounts;
+        private readonly IRepository<Food> food;
+        private readonly IRepository<Order> orders;
         private readonly IUserService userService;
 
         #region Commands
@@ -26,9 +32,18 @@ namespace PizzaPlace.WPF.ViewModels
         }
 
 
-        public MainWindowViewModel(IRepository<User> _users, IUserService _userService)
+        public MainWindowViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
+                            IRepository<Bonus> _bonuses, IRepository<Category> _categories,
+                            IRepository<Discount> _discounts, IRepository<Food> _food,
+                            IRepository<Order> _orders, IUserService _userService)
         {
             users = _users;
+            baskets = _baskets;
+            bonuses = _bonuses;
+            categories = _categories;
+            discounts = _discounts;
+            food = _food;
+            orders = _orders;
             userService = _userService;
 
             currentViewModel = new EnterViewModel();

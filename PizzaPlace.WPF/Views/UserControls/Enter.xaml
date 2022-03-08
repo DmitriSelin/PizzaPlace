@@ -8,9 +8,6 @@
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <vm:EnterViewModel/>
-    </UserControl.DataContext>
     <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -61,7 +58,7 @@
                              Style="{StaticResource PasswordStyle}" Background="{StaticResource LightGrayBrush}"/>
                 <Button Grid.Column="0" Grid.Row="6" Command="{Binding GetViewModelCommand}"
                         CommandParameter="MainUserView"
-                        Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}"/>
+                        Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}" Cursor="Hand"/>
                 <Button Grid.Column="1" Grid.Row="6" Command="{Binding GetViewModelCommand}"
                         CommandParameter="MainEnterView"
                         Style="{StaticResource MainButtonStyle}"

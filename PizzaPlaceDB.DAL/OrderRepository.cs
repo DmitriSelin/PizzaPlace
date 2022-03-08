@@ -7,9 +7,7 @@ namespace PizzaPlaceDB.DAL
 {
     internal class OrderRepository : DbRepository<Order>
     {
-        public override IQueryable<Order> Items => base.Items
-            .Include(item => item.User)
-            .Include(item => item.Basket);
+        public override IQueryable<Order> Items => base.Items.Include(item => item.Basket);
 
         public OrderRepository(PizzaPlaceContext dbContext) : base(dbContext) { }
     }

@@ -10,9 +10,6 @@
              xmlns:behaviors="clr-namespace:PizzaPlace.WPF.Behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <vm:MainEnterViewModel/>
-    </UserControl.DataContext>
     <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -78,7 +75,7 @@
                 <UniformGrid Grid.Row="11" Columns="2">
                     <Button Style="{StaticResource MainButtonStyle}" Margin="10, 5"
                             VerticalAlignment="Stretch" Content="Back"
-                            Command="{Binding BackHomeCommand}"/>
+                            Command="{Binding BackHomeCommand}" Cursor="Hand"/>
                     <Button Style="{StaticResource MainButtonStyle}" Margin="10, 5"
                             VerticalAlignment="Stretch" Content="Log In"
                             Command="{Binding OpenMainUserViewCommand}" Cursor="Hand"/>

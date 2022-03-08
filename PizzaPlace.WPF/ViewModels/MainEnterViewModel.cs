@@ -1,6 +1,5 @@
 ﻿using PizzaPlace.BL.Exceptions;
 using PizzaPlace.BL.Interfaces;
-using PizzaPlace.BL.Services;
 using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
@@ -20,7 +19,9 @@ namespace PizzaPlace.WPF.ViewModels
         #endregion
 
         private readonly IRepository<User> users;
-        private IUserService userService;
+        private readonly IUserService userService;
+
+        #region Properties
 
         private string name;
         
@@ -61,6 +62,8 @@ namespace PizzaPlace.WPF.ViewModels
             get => repeatPassword;
             set => Set(ref repeatPassword, value);
         }
+
+        #endregion
 
         #region Commands
 

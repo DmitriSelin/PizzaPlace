@@ -14,8 +14,6 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public virtual ICollection<Basket> Baskets { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
-
         public int BonusId { get; set; }
 
         public virtual Bonus Bonus { get; set; }
