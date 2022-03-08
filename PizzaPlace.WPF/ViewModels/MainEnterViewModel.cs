@@ -85,12 +85,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void OnOpenMainUserViewCommandExecuted(object p)
         {
-            try
-            {
-                userService.RegisterUser(Name, SurName, Email, Password, RepeatPassword);
-                OpenUserViewEvent?.Invoke();
-            }
-            catch (PasswordException) { }
+            userService.RegisterUser(Name, SurName, Email, Password, RepeatPassword);
+            OpenUserViewEvent?.Invoke();
         }
 
         private bool CanOpenMainUserViewCommandExecute(object p) => true;
