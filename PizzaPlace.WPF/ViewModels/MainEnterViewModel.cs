@@ -1,10 +1,10 @@
 ﻿using PizzaPlace.BL.Exceptions;
 using PizzaPlace.BL.Interfaces;
+using PizzaPlace.BL.Services;
 using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -86,7 +86,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void OnOpenMainUserViewCommandExecuted(object p)
         {
-            userService.RegisterUser(Name, SurName, Email, Password, RepeatPassword);
+            userService.RegisterUserAsync(Name, SurName, Email, Password, RepeatPassword);
             OpenUserViewEvent?.Invoke();
         }
 

@@ -6,7 +6,9 @@ namespace PizzaPlace.BL.Interfaces
 {
     public interface IUserService
     {
-        Task<User> RegisterUser(string name, string surName, string email, string password, string repeatPassword);
+        User RegisterUser(string name, string surName, string email, string password, string repeatPassword);
+
+        Task<User> RegisterUserAsync(string name, string surName, string email, string password, string repeatPassword);
 
         IEnumerable<User> Users { get; }
     }

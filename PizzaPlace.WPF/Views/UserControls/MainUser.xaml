@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PizzaPlace.WPF.Views.UserControls"
+             xmlns:l="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
+             xmlns:views="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{StaticResource MainColorBrush}">
@@ -20,21 +21,45 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Style="{StaticResource StackButtonStyle}">
+            <Button Grid.Row="0" Style="{StaticResource StackButtonStyle}"
+                    Command="{Binding GetHomeViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_Home" Margin="15"/>
             </Button>
-            <Button Grid.Row="1" Style="{StaticResource StackButtonStyle}">
+            <Button Grid.Row="1" Style="{StaticResource StackButtonStyle}"
+                    Command="{Binding GetBasketViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_ShoppingCart" Margin="15"/>
             </Button>
-            <Button Grid.Row="2" Style="{StaticResource StackButtonStyle}">
+            <Button Grid.Row="2" Style="{StaticResource StackButtonStyle}"
+                    Command="{Binding GetDiscountViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_Percent" Margin="15"/>
             </Button>
-            <Button Grid.Row="3" Style="{StaticResource StackButtonStyle}">
+            <Button Grid.Row="3" Style="{StaticResource StackButtonStyle}"
+                    Command="{Binding GetHistoryViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_History" Margin="15"/>
             </Button>
-            <Button Grid.Row="4" Style="{StaticResource StackButtonStyle}">
-                <fa:ImageAwesome Icon="Solid_Truck" Margin="15"/>
+            <Button Grid.Row="4" Style="{StaticResource StackButtonStyle}"
+                    Command="{Binding GetStatisticViewModelCommand}">
+                <fa:ImageAwesome Icon="Solid_ChartArea" Margin="15"/>
             </Button>
         </Grid>
+        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                    <views:HomeView DataContext="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:BasketViewModel}">
+                    <views:BasketView DataContext="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:DiscountViewModel}">
+                    <views:DiscountView DataContext="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:HistoryViewModel}">
+                    <views:HistoryView DataContext="{Binding}"/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:StatisticViewModel}">
+                    <views:StatisticView DataContext="{Binding}"/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
     </Grid>
 </UserControl>
