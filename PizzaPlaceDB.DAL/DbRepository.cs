@@ -42,7 +42,7 @@ namespace PizzaPlaceDB.DAL
             db.Entry(item).State = EntityState.Added;
 
             if (AutoSaveChanges)
-            db.SaveChanges();
+                db.SaveChanges();
 
             return item;
         }
@@ -51,7 +51,6 @@ namespace PizzaPlaceDB.DAL
         {
             if (item is null) throw new ArgumentNullException(nameof(item));
 
-            //db.Entry(item).Context.Add(item);
             db.Entry(item).State = EntityState.Added;
 
             if (AutoSaveChanges)

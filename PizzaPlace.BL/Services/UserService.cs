@@ -23,48 +23,18 @@ namespace PizzaPlace.BL.Services
         {
             if (password != repeatPassword) throw new PasswordException("Password not equal repeatPassword");
 
-            try
-            {
-                var user = new User(name, surName, email, password);
+            var user = new User(name, surName, email, password);
 
-                return users.Add(user);
-            }
-            catch (ArgumentNullException)
-            {
-                return null;
-            }
-            catch (ArgumentException)
-            {
-                return null;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+            return users.Add(user);
         }
 
         public async Task<User> RegisterUserAsync(string name, string surName, string email, string password, string repeatPassword)
         {
-            if (password != repeatPassword) throw new PasswordException("Password not equal repeatPassword");
+             if (password != repeatPassword) throw new PasswordException("Password not equal repeatPassword");
 
-            try
-            {
-                var user = new User(name, surName, email, password);
+             var user = new User(name, surName, email, password);
 
-                return await users.AddAsync(user).ConfigureAwait(false);
-            }
-            catch (ArgumentNullException)
-            {
-                return null;
-            }
-            catch (ArgumentException)
-            {
-                return null;
-            }
-            catch (Exception)
-            {
-                return null;
-            }
+             return await users.AddAsync(user).ConfigureAwait(false);
         }
     }
 }

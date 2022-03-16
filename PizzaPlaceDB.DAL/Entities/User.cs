@@ -52,7 +52,8 @@ namespace PizzaPlaceDB.DAL.Entities
             SurName = surName;
             Email = email;
             Password = password;
-            FavoriteFood = "UnKnown";
+            FavoriteFood = null;
+            BonusId = 1;
         }
 
         public User() { }

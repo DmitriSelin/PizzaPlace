@@ -31,7 +31,7 @@
                            TextAlignment="Center" VerticalAlignment="Center"/>
             </WrapPanel>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="2" Cursor="Hand">
+        <Grid Grid.Row="0" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
