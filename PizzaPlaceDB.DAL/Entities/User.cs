@@ -34,7 +34,7 @@ namespace PizzaPlaceDB.DAL.Entities
             {
                 throw new ArgumentNullException("Email can not be null", nameof(email));
             }
-            else if (email.Length < 1 || email.Length > 50)
+            else if (email.Length < 1 || email.Length > 50 || !email.Contains("@") || !email.Contains("."))
             {
                 throw new ArgumentException("Not correct email", nameof(email));
             }

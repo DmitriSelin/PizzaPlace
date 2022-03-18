@@ -46,7 +46,7 @@ namespace PizzaPlace.WPF.ViewModels
             orders = _orders;
             userService = _userService;
 
-            currentViewModel = new EnterViewModel();
+            currentViewModel = new EnterViewModel(users, userService);
 
             #region Commands
 
@@ -74,7 +74,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void GetEnterViewModel()
         {
-            CurrentViewModel = new EnterViewModel();
+            CurrentViewModel = new EnterViewModel(users, userService);
         }
         #endregion
     }

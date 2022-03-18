@@ -10,6 +10,8 @@ namespace PizzaPlace.BL.Interfaces
 
         Task<User> RegisterUserAsync(string name, string surName, string email, string password, string repeatPassword);
 
+        User SignInApp(string email, string password);
+
         IEnumerable<User> Users { get; }
     }
 }

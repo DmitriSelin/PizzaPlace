@@ -4,6 +4,7 @@ using PizzaPlaceDB.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace PizzaPlace.BL.Services
 {
@@ -42,6 +43,34 @@ namespace PizzaPlace.BL.Services
 
 
             return await users.AddAsync(user).ConfigureAwait(false);
+        }
+
+        public User SignInApp(string email, string password)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                throw new ArgumentNullException("Email can not be null", nameof(email));
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                throw new ArgumentNullException("Password can not be null", nameof(password));
+            }
+
+            var user = new User
+            {
+                Email = email,
+                Password = password
+            };
+
+            User enterUser = users.Items.SingleOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+
+            if (enterUser == null)
+            {
+                throw new UserInputException("Not found user with these email and password");
+            }
+
+            return enterUser;
         }
     }
 }

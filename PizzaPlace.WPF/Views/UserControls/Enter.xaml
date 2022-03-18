@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:behaviors="clr-namespace:PizzaPlace.WPF.Behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{StaticResource MainColorBrush}">
@@ -45,7 +47,7 @@
                                Style="{StaticResource BoldTextBlockStyle}"/>
                 </WrapPanel>
                 <TextBox Style="{StaticResource LoginStyle}" Grid.Column="0" Grid.Row="3"
-                         Grid.ColumnSpan="2" VerticalContentAlignment="Center"
+                         Grid.ColumnSpan="2" VerticalContentAlignment="Center" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
                          Background="{StaticResource LightGrayBrush}" BorderThickness="0"/>
                 <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
                     <fa:ImageAwesome Icon="Solid_Lock"
@@ -55,12 +57,14 @@
                 </WrapPanel>
                 <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
                              VerticalContentAlignment="Center"
-                             Style="{StaticResource PasswordStyle}" Background="{StaticResource LightGrayBrush}"/>
-                <Button Grid.Column="0" Grid.Row="6" Command="{Binding GetViewModelCommand}"
-                        CommandParameter="MainUserView"
-                        Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}" Cursor="Hand"/>
-                <Button Grid.Column="1" Grid.Row="6" Command="{Binding GetViewModelCommand}"
-                        CommandParameter="MainEnterView"
+                             Style="{StaticResource PasswordStyle}" Background="{StaticResource LightGrayBrush}">
+                    <b:Interaction.Behaviors>
+                        <behaviors:PasswordBehavior Password="{Binding Password, Mode=TwoWay}"/>
+                    </b:Interaction.Behaviors>
+                </PasswordBox>
+                <Button Grid.Column="0" Grid.Row="6" Command="{Binding OpenMainUserViewCommand}"
+                        Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}"/>
+                <Button Grid.Column="1" Grid.Row="6" Command="{Binding OpenMainEnterViewCommand}"
                         Style="{StaticResource MainButtonStyle}"
                         Content="Log In" Margin="20, 15"/>
             </Grid>
