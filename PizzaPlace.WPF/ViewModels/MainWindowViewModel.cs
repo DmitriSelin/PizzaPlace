@@ -61,7 +61,7 @@ namespace PizzaPlace.WPF.ViewModels
             #endregion
         }
 
-        #region VM_Methods
+        #region MethodsVM
         private void GetMainUserViewModel()
         {
             CurrentViewModel = new MainUserViewModel();

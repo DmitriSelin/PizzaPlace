@@ -22,7 +22,13 @@ namespace PizzaPlace.BL.Services
         public User RegisterUser(string name, string surName, string email,
                                              string password, string repeatPassword)
         {
-            if (password != repeatPassword) throw new PasswordException("Password not equal repeatPassword");
+            if (password != repeatPassword)
+                throw new PasswordException("Password not equal repeatPassword");
+
+            User repeatUser = users.Items.SingleOrDefault(x => x.Email == email || x.Password == password);
+
+            if (repeatUser != null)
+                throw new RepeatUserException("DataBase has the same user");
 
             var user = new User(name, surName, email, password)
             {
@@ -34,13 +40,18 @@ namespace PizzaPlace.BL.Services
 
         public async Task<User> RegisterUserAsync(string name, string surName, string email, string password, string repeatPassword)
         {
-            if (password != repeatPassword) throw new PasswordException("Password not equal repeatPassword");
+            if (password != repeatPassword) 
+                throw new PasswordException("Password not equal repeatPassword");
+
+            User repeatUser = users.Items.SingleOrDefault(x => x.Email == email || x.Password == password);
+
+            if (repeatUser != null)
+                throw new RepeatUserException("DataBase has the same user");
 
             var user = new User(name, surName, email, password)
             { 
                 BonusId = 1
             };
-
 
             return await users.AddAsync(user).ConfigureAwait(false);
         }

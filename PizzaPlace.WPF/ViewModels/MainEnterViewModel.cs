@@ -98,6 +98,10 @@ namespace PizzaPlace.WPF.ViewModels
             {
                 return;
             }
+            catch(RepeatUserException)
+            {
+                return;
+            }
             catch(PasswordException)
             {
                 return;
