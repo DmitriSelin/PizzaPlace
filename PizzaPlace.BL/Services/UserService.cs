@@ -25,7 +25,7 @@ namespace PizzaPlace.BL.Services
             if (password != repeatPassword)
                 throw new PasswordException("Password not equal repeatPassword");
 
-            User repeatUser = users.Items.SingleOrDefault(x => x.Email == email || x.Password == password);
+            User repeatUser = users.Items.SingleOrDefault(x => x.Email == email);
 
             if (repeatUser != null)
                 throw new RepeatUserException("DataBase has the same user");
@@ -43,7 +43,7 @@ namespace PizzaPlace.BL.Services
             if (password != repeatPassword) 
                 throw new PasswordException("Password not equal repeatPassword");
 
-            User repeatUser = users.Items.SingleOrDefault(x => x.Email == email || x.Password == password);
+            User repeatUser = users.Items.SingleOrDefault(x => x.Email == email);
 
             if (repeatUser != null)
                 throw new RepeatUserException("DataBase has the same user");
