@@ -13,6 +13,7 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<User> users;
         private readonly IUserService userService;
         private readonly MainWindowViewModel mainViewModel;
+        internal User User;
 
         #region Properties
 
@@ -44,8 +45,9 @@ namespace PizzaPlace.WPF.ViewModels
         {
             try
             {
-                userService.SignInApp(Email, Password);
+                User = userService.SignInApp(Email, Password);
                 mainViewModel.GetMainUserViewModel();
+                mainViewModel.UserName = User.Name;
             }
             catch(ArgumentNullException)
             {

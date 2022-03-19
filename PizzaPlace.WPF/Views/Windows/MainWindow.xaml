@@ -27,7 +27,7 @@
             </Grid.RowDefinitions>
             <WrapPanel Grid.Row="0">
                 <fa:ImageAwesome Icon="Solid_UserNinja" VerticalAlignment="Center" Margin="10, 8, 10, 0"/>
-                <TextBlock Text="ToDo" Style="{StaticResource NameTextBlockStyle}"
+                <TextBlock Text="{Binding UserName}" Style="{StaticResource NameTextBlockStyle}"
                            TextAlignment="Center" VerticalAlignment="Center"/>
             </WrapPanel>
         </Grid>

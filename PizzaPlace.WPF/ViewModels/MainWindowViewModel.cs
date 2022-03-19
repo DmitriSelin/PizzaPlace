@@ -25,6 +25,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
+        #region Properties
+
         private ViewModel currentViewModel;
 
         public ViewModel CurrentViewModel
@@ -32,6 +34,16 @@ namespace PizzaPlace.WPF.ViewModels
             get => currentViewModel;
             set => Set(ref currentViewModel, value);
         }
+
+        private string userName;
+
+        public string UserName
+        {
+            get => userName;
+            set => Set(ref userName, value);
+        }
+
+        #endregion
 
 
         public MainWindowViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
