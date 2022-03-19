@@ -10,16 +10,9 @@ namespace PizzaPlace.WPF.ViewModels
 {
     internal class MainEnterViewModel : ViewModel
     {
-        #region Events
-
-        public static event Action BackHomeEvent;
-
-        public static event Action OpenUserViewEvent;
-
-        #endregion
-
         private readonly IRepository<User> users;
         private readonly IUserService userService;
+        private readonly MainWindowViewModel mainViewModel;
 
         #region Properties
 
@@ -72,10 +65,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void OnBackHomeCommandExecuted(object p)
         {
-            BackHomeEvent?.Invoke();
+            mainViewModel.GetEnterViewModel();
         }
-
-        private bool CanBackHomeCommandExecute(object p) => true;
 
         #endregion
 
@@ -88,7 +79,7 @@ namespace PizzaPlace.WPF.ViewModels
             try
             {
                 userService.RegisterUser(Name, SurName, Email, Password, RepeatPassword);
-                OpenUserViewEvent?.Invoke();
+                mainViewModel.GetMainUserViewModel();
             }
             catch (ArgumentNullException)
             {
@@ -108,23 +99,23 @@ namespace PizzaPlace.WPF.ViewModels
             }
         }
 
-        private bool CanOpenMainUserViewCommandExecute(object p) => true;
+        #endregion
+
+        private bool CanExecute(object p) => true;
 
         #endregion
 
-        #endregion
-
-        public MainEnterViewModel(IRepository<User> _users, IUserService _userService)
+        public MainEnterViewModel(IRepository<User> _users, IUserService _userService, MainWindowViewModel _mainViewModel)
         {
             users = _users;
             userService = _userService;
+            mainViewModel = _mainViewModel;
 
             #region Commands
 
-            BackHomeCommand = new LambdaCommand(OnBackHomeCommandExecuted, CanBackHomeCommandExecute);
+            BackHomeCommand = new LambdaCommand(OnBackHomeCommandExecuted, CanExecute);
 
-            OpenMainUserViewCommand = new LambdaCommand(OnOpenMainUserViewCommandExecuted,
-                                                        CanOpenMainUserViewCommandExecute);
+            OpenMainUserViewCommand = new LambdaCommand(OnOpenMainUserViewCommandExecuted, CanExecute);
 
             #endregion
         }

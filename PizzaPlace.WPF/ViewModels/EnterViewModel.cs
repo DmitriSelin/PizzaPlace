@@ -12,6 +12,7 @@ namespace PizzaPlace.WPF.ViewModels
     {
         private readonly IRepository<User> users;
         private readonly IUserService userService;
+        private readonly MainWindowViewModel mainViewModel;
 
         #region Properties
 
@@ -35,14 +36,6 @@ namespace PizzaPlace.WPF.ViewModels
 
         #region Commands
 
-        #region Events
-
-        public static event Action SignInButtonPressed;
-
-        public static event Action LogInButtonPressed;
-
-        #endregion
-
         #region OpenMainUserViewCommand
 
         public ICommand OpenMainUserViewCommand { get; }
@@ -52,7 +45,7 @@ namespace PizzaPlace.WPF.ViewModels
             try
             {
                 userService.SignInApp(Email, Password);
-                SignInButtonPressed?.Invoke();
+                mainViewModel.GetMainUserViewModel();
             }
             catch(ArgumentNullException)
             {
@@ -70,7 +63,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand OpenMainEnterViewCommand { get; }
 
-        private void OnOpenMainEnterViewCommandExecuted(object p) => LogInButtonPressed?.Invoke();
+        private void OnOpenMainEnterViewCommandExecuted(object p) => mainViewModel.GetMainEnterViewModel();
 
         #endregion
 
@@ -78,10 +71,11 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public EnterViewModel(IRepository<User> _users, IUserService _userService)
+        public EnterViewModel(IRepository<User> _users, IUserService _userService, MainWindowViewModel _mainViewModel)
         {
             users = _users;
             userService = _userService;
+            mainViewModel = _mainViewModel;
 
             #region Commands
 

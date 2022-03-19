@@ -16,6 +16,8 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Food> food;
         private readonly IRepository<Order> orders;
         private readonly IUserService userService;
+        private readonly MainEnterViewModel mainEnterViewModel;
+        private readonly EnterViewModel enterViewModel;
 
         #region Commands
 
@@ -46,35 +48,32 @@ namespace PizzaPlace.WPF.ViewModels
             orders = _orders;
             userService = _userService;
 
-            currentViewModel = new EnterViewModel(users, userService);
+            mainEnterViewModel = new MainEnterViewModel(users, userService, this);
+            enterViewModel = new EnterViewModel(users, userService, this);
+
+            currentViewModel = enterViewModel;
 
             #region Commands
 
-            #region Events
             OpenLinkCommand = new OpenLinkCommand();
-            EnterViewModel.SignInButtonPressed += GetMainUserViewModel;
-            EnterViewModel.LogInButtonPressed += GetMainEnterViewModel;
-            MainEnterViewModel.BackHomeEvent += GetEnterViewModel;
-            MainEnterViewModel.OpenUserViewEvent += GetMainUserViewModel;
-            #endregion
 
             #endregion
         }
 
         #region MethodsVM
-        private void GetMainUserViewModel()
+        internal void GetMainUserViewModel()
         {
             CurrentViewModel = new MainUserViewModel();
         }
 
-        private void GetMainEnterViewModel()
+        internal void GetMainEnterViewModel()
         {
-            CurrentViewModel = new MainEnterViewModel(users, userService);
+            CurrentViewModel = mainEnterViewModel;
         }
 
-        private void GetEnterViewModel()
+        internal void GetEnterViewModel()
         {
-            CurrentViewModel = new EnterViewModel(users, userService);
+            CurrentViewModel = enterViewModel;
         }
         #endregion
     }
