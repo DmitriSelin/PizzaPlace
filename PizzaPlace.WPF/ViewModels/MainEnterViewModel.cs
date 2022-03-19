@@ -61,12 +61,10 @@ namespace PizzaPlace.WPF.ViewModels
         #region Commands
 
         #region HomeCommand
+
         public ICommand BackHomeCommand { get; }
 
-        private void OnBackHomeCommandExecuted(object p)
-        {
-            mainViewModel.GetEnterViewModel();
-        }
+        private void OnBackHomeCommandExecuted(object p) => mainViewModel.GetEnterViewModel();
 
         #endregion
 
