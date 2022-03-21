@@ -75,7 +75,7 @@ namespace PizzaPlace.WPF.ViewModels
         #region MethodsVM
         internal void GetMainUserViewModel()
         {
-            CurrentViewModel = new MainUserViewModel();
+            CurrentViewModel = new MainUserViewModel(users, baskets, bonuses, categories, discounts, food, orders);
         }
 
         internal void GetMainEnterViewModel()

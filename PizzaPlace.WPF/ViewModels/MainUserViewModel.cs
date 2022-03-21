@@ -1,11 +1,21 @@
-﻿using PizzaPlace.WPF.Infrastructure.Commands;
+﻿using PizzaPlace.BL.Interfaces;
+using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
+using PizzaPlaceDB.DAL.Entities;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
     internal class MainUserViewModel : ViewModel
     {
+        private readonly IRepository<User> users;
+        private readonly IRepository<Basket> baskets;
+        private readonly IRepository<Bonus> bonuses;
+        private readonly IRepository<Category> categories;
+        private readonly IRepository<Discount> discounts;
+        private readonly IRepository<Food> food;
+        private readonly IRepository<Order> orders;
+
         private ViewModel currentViewModel;
 
         public ViewModel CurrentViewModel
@@ -22,7 +32,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand GetHomeViewModelCommand { get; }
 
-        private void OnGetHomeViewModelCommandExecuted(object p) => CurrentViewModel = new HomeViewModel();
+        private void OnGetHomeViewModelCommandExecuted(object p) => CurrentViewModel = new HomeViewModel(food);
 
         #endregion
 
@@ -60,9 +70,20 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public MainUserViewModel()
+        public MainUserViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
+                            IRepository<Bonus> _bonuses, IRepository<Category> _categories,
+                            IRepository<Discount> _discounts, IRepository<Food> _food,
+                            IRepository<Order> _orders)
         {
-            currentViewModel = new HomeViewModel();
+            users = _users;
+            baskets = _baskets;
+            bonuses = _bonuses;
+            categories = _categories;
+            discounts = _discounts;
+            food = _food;
+            orders = _orders;
+
+            currentViewModel = new HomeViewModel(food);
 
             #region Commands
 
