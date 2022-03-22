@@ -9,15 +9,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{StaticResource BlueColorBrush}">
-        <ListBox Background="{StaticResource TransParentColorBrush}"
-                 HorizontalAlignment="Stretch"
-                 BorderThickness="0"
-                 ItemsSource="{Binding Food}"
-                 SelectedItem="{Binding SelectedFood}"
-                 SelectedIndex="0"
-                 VirtualizingPanel.IsVirtualizing="True"
-                 VirtualizingPanel.VirtualizationMode="Standard"
-                 VirtualizingPanel.IsContainerVirtualizable="True">
+        <ListBox ItemsSource="{Binding Food}" SelectedItem="{Binding SelectedFood}"
+                 Style="{StaticResource MainListBoxStyle}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel/>
@@ -25,14 +18,17 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="entity:Food">
-                    <Border Background="#F2D480" HorizontalAlignment="Center">
+                    <Border Style="{StaticResource OrangeBorderStyle}">
                         <UniformGrid Background="{StaticResource TransParentColorBrush}" Columns="2">
-                            <fa:ImageAwesome Icon="Solid_Hamburger" Height="200" Width="200"/>
-                            <DockPanel>
-                                <TextBlock DockPanel.Dock="Top" Text="{Binding Name}" Style="{StaticResource NameTextBlockStyle}"/>
-                                <TextBlock DockPanel.Dock="Top" Text="{Binding Price}" Style="{StaticResource NameTextBlockStyle}"/>
-                                <Button Content="Add to cart"/>
-                            </DockPanel>
+                            <fa:ImageAwesome Icon="Solid_PizzaSlice" Height="100" Width="100"/>
+                            <Canvas>
+                                <TextBlock Canvas.Top="10" Text="{Binding Name}" 
+                                           HorizontalAlignment="Center"
+                                           Style="{StaticResource NameTextBlockStyle}"/>
+                                <TextBlock Canvas.Bottom="10" Text="{Binding Price, StringFormat={}{0} $}"
+                                           HorizontalAlignment="Center"
+                                           Style="{StaticResource NameTextBlockStyle}"/>
+                            </Canvas>
                         </UniformGrid>
                     </Border>
                 </DataTemplate>
