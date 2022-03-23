@@ -56,6 +56,36 @@
         <Setter Property="Template" Value="{DynamicResource StackButtonTemplate}"/>
     </Style>
 
+    <Style x:Key="AloneButtonStyle" BasedOn="{StaticResource BtnBase}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#3A5985"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template" Value="{DynamicResource AloneButtonTemplate}"/>
+    </Style>
+
+    <ControlTemplate x:Key="AloneButtonTemplate" TargetType="{x:Type Button}">
+        <Border                 x:Name="border" CornerRadius="20"
+                                Background="{TemplateBinding Background}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                SnapsToDevicePixels="true">
+            <ContentPresenter x:Name="contentPresenter"
+                                              Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" TargetName="border" Value="#4758b5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <ControlTemplate x:Key="StackButtonTemplate" TargetType="{x:Type Button}">
         <Border                 x:Name="border" CornerRadius="1"
                                 Background="{TemplateBinding Background}"

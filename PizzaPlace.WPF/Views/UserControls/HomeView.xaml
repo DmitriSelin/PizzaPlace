@@ -9,8 +9,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{StaticResource BlueColorBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" MaxHeight="50"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{StaticResource LightGrayBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Style="{StaticResource LoginStyle}"
+                     Background="{StaticResource TransParentColorBrush}"
+                         BorderThickness="2" BorderBrush="DarkSlateGray"/>
+                <fa:ImageAwesome Grid.Column="1" Icon="Solid_Search" Margin="5"/>
+            </Grid>
+            <Button Grid.Column="1" Style="{StaticResource AloneButtonStyle}" Margin="5">
+                <UniformGrid Columns="2">
+                    <TextBlock Text="Add to cart" VerticalAlignment="Center" FontSize="16"
+                               Margin="10, 0, 0, 0" HorizontalAlignment="Right"/>
+                    <fa:ImageAwesome Icon="Solid_ShoppingCart" Foreground="WhiteSmoke"/>
+                </UniformGrid>
+            </Button>
+        </Grid>
         <ListBox ItemsSource="{Binding Food}" SelectedItem="{Binding SelectedFood}"
-                 Style="{StaticResource MainListBoxStyle}">
+                 Style="{StaticResource MainListBoxStyle}" Grid.Row="1">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel/>
