@@ -48,6 +48,7 @@ namespace PizzaPlace.WPF.ViewModels
                 User = userService.SignInApp(Email, Password);
                 mainViewModel.GetMainUserViewModel();
                 mainViewModel.UserName = User.Name;
+                MainWindowViewModel.User = User;
             }
             catch(ArgumentNullException)
             {

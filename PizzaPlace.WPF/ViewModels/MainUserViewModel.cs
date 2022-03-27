@@ -15,6 +15,9 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Discount> discounts;
         private readonly IRepository<Food> food;
         private readonly IRepository<Order> orders;
+        private readonly IBasketService basketService;
+        private readonly MainWindowViewModel mainViewModel;
+        private readonly User user;
 
         private ViewModel currentViewModel;
 
@@ -32,7 +35,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand GetHomeViewModelCommand { get; }
 
-        private void OnGetHomeViewModelCommandExecuted(object p) => CurrentViewModel = new HomeViewModel(food);
+        private void OnGetHomeViewModelCommandExecuted(object p) => CurrentViewModel = new HomeViewModel(food, baskets,
+                                                                                                    basketService, user);
 
         #endregion
 
@@ -73,7 +77,8 @@ namespace PizzaPlace.WPF.ViewModels
         public MainUserViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
                             IRepository<Bonus> _bonuses, IRepository<Category> _categories,
                             IRepository<Discount> _discounts, IRepository<Food> _food,
-                            IRepository<Order> _orders)
+                            IRepository<Order> _orders, IBasketService _basketService,
+                            MainWindowViewModel _mainViewModel, User _user)
         {
             users = _users;
             baskets = _baskets;
@@ -82,8 +87,11 @@ namespace PizzaPlace.WPF.ViewModels
             discounts = _discounts;
             food = _food;
             orders = _orders;
+            basketService = _basketService;
+            user = _user;
+            mainViewModel = _mainViewModel;
 
-            currentViewModel = new HomeViewModel(food);
+            currentViewModel = new HomeViewModel(food, baskets, basketService, user);
 
             #region Commands
 

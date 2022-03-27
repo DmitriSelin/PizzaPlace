@@ -80,6 +80,7 @@ namespace PizzaPlace.WPF.ViewModels
                 User = userService.RegisterUser(Name, SurName, Email, Password, RepeatPassword);
                 mainViewModel.GetMainUserViewModel();
                 mainViewModel.UserName = User.Name;
+                MainWindowViewModel.User = User;
             }
             catch (ArgumentNullException)
             {

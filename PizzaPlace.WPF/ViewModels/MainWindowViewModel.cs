@@ -16,8 +16,12 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Food> food;
         private readonly IRepository<Order> orders;
         private readonly IUserService userService;
+        private readonly IBasketService basketService;
         private readonly MainEnterViewModel mainEnterViewModel;
         private readonly EnterViewModel enterViewModel;
+        private readonly MainUserViewModel mainUserViewModel;
+
+        internal static User User;
 
         #region Commands
 
@@ -49,7 +53,8 @@ namespace PizzaPlace.WPF.ViewModels
         public MainWindowViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
                             IRepository<Bonus> _bonuses, IRepository<Category> _categories,
                             IRepository<Discount> _discounts, IRepository<Food> _food,
-                            IRepository<Order> _orders, IUserService _userService)
+                            IRepository<Order> _orders, IUserService _userService,
+                            IBasketService _basketService)
         {
             users = _users;
             baskets = _baskets;
@@ -59,9 +64,14 @@ namespace PizzaPlace.WPF.ViewModels
             food = _food;
             orders = _orders;
             userService = _userService;
+            basketService = _basketService;
 
             mainEnterViewModel = new MainEnterViewModel(users, userService, this);
+
             enterViewModel = new EnterViewModel(users, userService, this);
+
+            mainUserViewModel = new MainUserViewModel(users, baskets, bonuses, categories, discounts,
+                food, _orders, basketService, this, User);
 
             currentViewModel = enterViewModel;
 
@@ -72,10 +82,10 @@ namespace PizzaPlace.WPF.ViewModels
             #endregion
         }
 
-        #region MethodsVM
+        #region VM_Methods
         internal void GetMainUserViewModel()
         {
-            CurrentViewModel = new MainUserViewModel(users, baskets, bonuses, categories, discounts, food, orders);
+            CurrentViewModel = mainUserViewModel;
         }
 
         internal void GetMainEnterViewModel()

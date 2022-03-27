@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{StaticResource BlueColorBrush}">
-            
+        <TextBlock Text="This feature is still in development..." HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Style="{StaticResource NameTextBlockStyle}"/>
     </Grid>
 </UserControl>

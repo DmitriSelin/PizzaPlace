@@ -28,7 +28,8 @@
                          BorderThickness="2" BorderBrush="DarkSlateGray"/>
                 <fa:ImageAwesome Grid.Column="1" Icon="Solid_Search" Margin="5"/>
             </Grid>
-            <Button Grid.Column="1" Style="{StaticResource AloneButtonStyle}" Margin="5">
+            <Button Grid.Column="1" Style="{StaticResource AloneButtonStyle}"
+                    Command="{Binding AddToCartCommand}" Margin="5" Cursor="Hand">
                 <UniformGrid Columns="2">
                     <TextBlock Text="Add to cart" VerticalAlignment="Center" FontSize="16"
                                Margin="10, 0, 0, 0" HorizontalAlignment="Right"/>
