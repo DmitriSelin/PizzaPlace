@@ -10,20 +10,18 @@ namespace PizzaPlace.BL.Services
     {
         private readonly IRepository<Food> food;
         private readonly IRepository<Basket> baskets;
-        private readonly User user;
 
         public IEnumerable<Food> Food => food.Items;
 
         public IEnumerable<Basket> Baskets => baskets.Items;
 
-        public BasketService(IRepository<Food> _food, IRepository<Basket> _baskets, User _user)
+        public BasketService(IRepository<Food> _food, IRepository<Basket> _baskets)
         {
             food = _food;
             baskets = _baskets;
-            user = _user;
         }
 
-        public Basket PutFoodToBasket(object food)
+        public Basket PutFoodToBasket(object food, User user)
         {
             if (food == null)
             {
@@ -31,18 +29,17 @@ namespace PizzaPlace.BL.Services
             }
 
             Food currentFood = (Food)food;
-            User currentUser = user;
 
             var basket = new Basket
             {
-                UserId = currentUser.Id,
+                UserId = user.Id,
                 FoodId = currentFood.Id
             };
 
             return baskets.Add(basket);
         }
 
-        public async Task<Basket> PutFoodToBasketAsync(object food)
+        public async Task<Basket> PutFoodToBasketAsync(object food, User user)
         {
             if (food == null)
             {
@@ -50,11 +47,10 @@ namespace PizzaPlace.BL.Services
             }
 
             Food currentFood = (Food)food;
-            User currentUser = user;
 
             var basket = new Basket
             {
-                UserId = currentUser.Id,
+                UserId = user.Id,
                 FoodId = currentFood.Id
             };
 

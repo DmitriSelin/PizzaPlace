@@ -47,12 +47,12 @@ namespace PizzaPlace.WPF.ViewModels
         #endregion
 
         public HomeViewModel(IRepository<Food> _food, IRepository<Basket> _baskets,
-            IBasketService _basketService, User _user)
+                             IBasketService _basketService)
         {
             food = _food;
             baskets = _baskets;
             basketService = _basketService;
-            user = _user;
+            user = MainWindowViewModel.User;
 
             Food = new ObservableCollection<Food>(food.Items);
 

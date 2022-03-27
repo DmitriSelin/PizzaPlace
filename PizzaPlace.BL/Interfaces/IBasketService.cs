@@ -6,9 +6,9 @@ namespace PizzaPlace.BL.Interfaces
 {
     public interface IBasketService
     {
-        Basket PutFoodToBasket(object food);
+        Basket PutFoodToBasket(object food, User user);
 
-        Task<Basket> PutFoodToBasketAsync(object food);
+        Task<Basket> PutFoodToBasketAsync(object food, User user);
 
         IEnumerable<Food> Food { get; }
 

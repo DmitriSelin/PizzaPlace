@@ -71,7 +71,7 @@ namespace PizzaPlace.WPF.ViewModels
             enterViewModel = new EnterViewModel(users, userService, this);
 
             mainUserViewModel = new MainUserViewModel(users, baskets, bonuses, categories, discounts,
-                food, _orders, basketService, this, User);
+                food, orders, basketService);
 
             currentViewModel = enterViewModel;
 

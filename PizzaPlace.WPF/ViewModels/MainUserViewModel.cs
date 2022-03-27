@@ -16,8 +16,7 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Food> food;
         private readonly IRepository<Order> orders;
         private readonly IBasketService basketService;
-        private readonly MainWindowViewModel mainViewModel;
-        private readonly User user;
+        private readonly HomeViewModel homeViewModel;
 
         private ViewModel currentViewModel;
 
@@ -35,8 +34,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand GetHomeViewModelCommand { get; }
 
-        private void OnGetHomeViewModelCommandExecuted(object p) => CurrentViewModel = new HomeViewModel(food, baskets,
-                                                                                                    basketService, user);
+        private void OnGetHomeViewModelCommandExecuted(object p) => 
+            CurrentViewModel = new HomeViewModel(food, baskets, basketService);
 
         #endregion
 
@@ -77,8 +76,7 @@ namespace PizzaPlace.WPF.ViewModels
         public MainUserViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
                             IRepository<Bonus> _bonuses, IRepository<Category> _categories,
                             IRepository<Discount> _discounts, IRepository<Food> _food,
-                            IRepository<Order> _orders, IBasketService _basketService,
-                            MainWindowViewModel _mainViewModel, User _user)
+                            IRepository<Order> _orders, IBasketService _basketService)
         {
             users = _users;
             baskets = _baskets;
@@ -88,10 +86,10 @@ namespace PizzaPlace.WPF.ViewModels
             food = _food;
             orders = _orders;
             basketService = _basketService;
-            user = _user;
-            mainViewModel = _mainViewModel;
 
-            currentViewModel = new HomeViewModel(food, baskets, basketService, user);
+            homeViewModel = new HomeViewModel(food, baskets, basketService);
+
+            currentViewModel = homeViewModel;
 
             #region Commands
 
