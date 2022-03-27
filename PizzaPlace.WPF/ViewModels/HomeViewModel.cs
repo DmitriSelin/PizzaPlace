@@ -13,7 +13,10 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Food> food;
         private readonly IRepository<Basket> baskets;
         private readonly IBasketService basketService;
-        private readonly User user;
+        private User User
+        {
+            get => MainWindowViewModel.User;
+        }
 
         public ObservableCollection<Food> Food { get; }
 
@@ -27,7 +30,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void OnAddToCartCommandExecuted(object p)
         {
-            MessageBox.Show(user.ToString());
+            MessageBox.Show(User.ToString());
         }
 
         #endregion
@@ -46,13 +49,12 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public HomeViewModel(IRepository<Food> _food, IRepository<Basket> _baskets,
-                             IBasketService _basketService)
+        public HomeViewModel(IRepository<Food> _food, IRepository<Basket> _baskets, IBasketService _basketService)
         {
             food = _food;
             baskets = _baskets;
             basketService = _basketService;
-            user = MainWindowViewModel.User;
+            //user = MainWindowViewModel.User;
 
             Food = new ObservableCollection<Food>(food.Items);
 

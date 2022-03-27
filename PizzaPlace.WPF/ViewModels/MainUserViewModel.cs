@@ -18,6 +18,8 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IBasketService basketService;
         private readonly HomeViewModel homeViewModel;
 
+        internal User user;
+
         private ViewModel currentViewModel;
 
         public ViewModel CurrentViewModel
@@ -35,7 +37,7 @@ namespace PizzaPlace.WPF.ViewModels
         public ICommand GetHomeViewModelCommand { get; }
 
         private void OnGetHomeViewModelCommandExecuted(object p) => 
-            CurrentViewModel = new HomeViewModel(food, baskets, basketService);
+            CurrentViewModel = homeViewModel;
 
         #endregion
 
@@ -86,6 +88,7 @@ namespace PizzaPlace.WPF.ViewModels
             food = _food;
             orders = _orders;
             basketService = _basketService;
+            user = MainWindowViewModel.User;
 
             homeViewModel = new HomeViewModel(food, baskets, basketService);
 
