@@ -2,6 +2,7 @@
 using PizzaPlace.BL.Interfaces;
 using PizzaPlaceDB.DAL.Entities;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace PizzaPlace.BL.Services
@@ -30,10 +31,18 @@ namespace PizzaPlace.BL.Services
 
             Food currentFood = (Food)food;
 
+            Basket repeatBasket = baskets.Items.SingleOrDefault(x => x.UserId == user.Id && x.FoodId == currentFood.Id);
+
+            if (repeatBasket != null)
+            {
+                throw new RepeatUserException("User has already added this food to the cart");
+            }
+
             var basket = new Basket
             {
                 UserId = user.Id,
-                FoodId = currentFood.Id
+                FoodId = currentFood.Id,
+                DiscountId = 1
             };
 
             return baskets.Add(basket);

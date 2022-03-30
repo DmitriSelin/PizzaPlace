@@ -37,7 +37,7 @@
                 </UniformGrid>
             </Button>
         </Grid>
-        <ListBox ItemsSource="{Binding Food}" SelectedItem="{Binding SelectedFood}"
+        <ListBox ItemsSource="{Binding Food}" SelectedItem="{Binding SelectedFood, Mode=TwoWay}"
                  Style="{StaticResource MainListBoxStyle}" Grid.Row="1">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>

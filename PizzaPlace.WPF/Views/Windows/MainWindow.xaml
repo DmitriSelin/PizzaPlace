@@ -54,13 +54,13 @@
                                       CommandParameter="https://web.telegram.org/z/"/>
                     </fa:ImageAwesome.InputBindings>
                 </fa:ImageAwesome>
-                <fa:ImageAwesome Icon="Brands_Instagram"
+                <fa:ImageAwesome Icon="Brands_Reddit"
                                  Style="{StaticResource ContactImageStyle}"
                                  Foreground="{StaticResource IconTextBrush}">
                     <fa:ImageAwesome.InputBindings>
                         <MouseBinding Command="{Binding OpenLinkCommand}"
                                       MouseAction="LeftClick"
-                                      CommandParameter="https://www.instagram.com/"/>
+                                      CommandParameter="https://www.reddit.com/"/>
                     </fa:ImageAwesome.InputBindings>
                 </fa:ImageAwesome>
                 <fa:ImageAwesome Icon="Brands_Github"

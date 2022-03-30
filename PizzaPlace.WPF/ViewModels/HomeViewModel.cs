@@ -1,9 +1,9 @@
-﻿using PizzaPlace.BL.Interfaces;
+﻿using PizzaPlace.BL.Exceptions;
+using PizzaPlace.BL.Interfaces;
 using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System.Collections.ObjectModel;
-using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -30,7 +30,19 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void OnAddToCartCommandExecuted(object p)
         {
-            MessageBox.Show(User.ToString());
+            try
+            {
+                basketService.PutFoodToBasket(SelectedFood, User);
+                Food.Remove((Food)SelectedFood);
+            }
+            catch(UserInputException)
+            {
+                return;
+            }
+            catch(RepeatUserException)
+            {
+                return;
+            }
         }
 
         #endregion
@@ -54,7 +66,6 @@ namespace PizzaPlace.WPF.ViewModels
             food = _food;
             baskets = _baskets;
             basketService = _basketService;
-            //user = MainWindowViewModel.User;
 
             Food = new ObservableCollection<Food>(food.Items);
 
