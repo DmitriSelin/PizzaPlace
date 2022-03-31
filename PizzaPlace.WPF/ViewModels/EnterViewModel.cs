@@ -4,6 +4,7 @@ using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -52,10 +53,13 @@ namespace PizzaPlace.WPF.ViewModels
             }
             catch(ArgumentNullException)
             {
+                MessageBox.Show("Incorrect email or password", "", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             catch(UserInputException)
             {
+                MessageBox.Show("Not found user with these email and password", "",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
         }

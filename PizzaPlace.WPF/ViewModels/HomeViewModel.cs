@@ -4,6 +4,7 @@ using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -41,6 +42,8 @@ namespace PizzaPlace.WPF.ViewModels
             }
             catch(RepeatUserException)
             {
+                MessageBox.Show("You have already added this food to the cart", "",
+                                MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 return;
             }
         }

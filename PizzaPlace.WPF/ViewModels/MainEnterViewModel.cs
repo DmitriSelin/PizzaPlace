@@ -4,6 +4,7 @@ using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -84,18 +85,23 @@ namespace PizzaPlace.WPF.ViewModels
             }
             catch (ArgumentNullException)
             {
+                MessageBox.Show("Fill in all the input fields", "", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             catch (ArgumentException)
             {
+                MessageBox.Show("Incorrect email or password", "", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             catch(RepeatUserException)
             {
+                MessageBox.Show("The user with this email is already registered in the system", "",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             catch(PasswordException)
             {
+                MessageBox.Show("Repeat the correct password", "", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
         }
