@@ -45,7 +45,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand GetBasketViewModelCommand { get; }
 
-        private void OnGetBasketViewModelCommandExecuted(object p) => CurrentViewModel = new BasketViewModel();
+        private void OnGetBasketViewModelCommandExecuted(object p) =>
+            CurrentViewModel = new BasketViewModel(food, baskets);
 
         #endregion
 
