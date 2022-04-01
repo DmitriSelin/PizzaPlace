@@ -17,6 +17,7 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Order> orders;
         private readonly IUserService userService;
         private readonly IBasketService basketService;
+        private readonly ISaleService saleService;
         private readonly MainEnterViewModel mainEnterViewModel;
         private readonly EnterViewModel enterViewModel;
         private readonly MainUserViewModel mainUserViewModel;
@@ -54,7 +55,7 @@ namespace PizzaPlace.WPF.ViewModels
                             IRepository<Bonus> _bonuses, IRepository<Category> _categories,
                             IRepository<Discount> _discounts, IRepository<Food> _food,
                             IRepository<Order> _orders, IUserService _userService,
-                            IBasketService _basketService)
+                            IBasketService _basketService, ISaleService _saleService)
         {
             users = _users;
             baskets = _baskets;
@@ -65,13 +66,14 @@ namespace PizzaPlace.WPF.ViewModels
             orders = _orders;
             userService = _userService;
             basketService = _basketService;
+            saleService = _saleService;
 
             mainEnterViewModel = new MainEnterViewModel(users, userService, this);
 
             enterViewModel = new EnterViewModel(users, userService, this);
 
             mainUserViewModel = new MainUserViewModel(users, baskets, bonuses, categories, discounts,
-                food, orders, basketService);
+                food, orders, basketService, saleService);
 
             currentViewModel = enterViewModel;
 

@@ -8,6 +8,7 @@ namespace PizzaPlace.BL.Services
         public static IServiceCollection AddServices(this IServiceCollection services) => services
             .AddTransient<IUserService, UserService>()
             .AddTransient<IBasketService, BasketService>()
+            .AddTransient<ISaleService, SaleService>()
             ;
     }
 }

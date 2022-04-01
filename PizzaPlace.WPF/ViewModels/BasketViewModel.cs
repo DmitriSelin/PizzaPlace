@@ -1,4 +1,5 @@
-﻿using PizzaPlace.BL.Interfaces;
+﻿using PizzaPlace.BL.Exceptions;
+using PizzaPlace.BL.Interfaces;
 using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
@@ -11,6 +12,7 @@ namespace PizzaPlace.WPF.ViewModels
     {
         private readonly IRepository<Food> food;
         private readonly IRepository<Basket> baskets;
+        private readonly ISaleService saleService;
 
         private object selectedFood;
 
@@ -40,11 +42,12 @@ namespace PizzaPlace.WPF.ViewModels
         {
             try
             {
-
+                saleService.BuyFood(SelectedFood, user);
+                BasketFood.Remove((Food)SelectedFood);
             }
-            catch
+            catch (UserInputException)
             {
-
+                return;
             }
         }
 
@@ -52,10 +55,12 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public BasketViewModel(IRepository<Food> _food, IRepository<Basket> _baskets)
+        public BasketViewModel(IRepository<Food> _food, IRepository<Basket> _baskets,
+            ISaleService _saleService)
         {
             food = _food;
             baskets = _baskets;
+            saleService = _saleService;
 
             Food = new ObservableCollection<Food>(food.Items);
             Baskets = new ObservableCollection<Basket>(baskets.Items);
