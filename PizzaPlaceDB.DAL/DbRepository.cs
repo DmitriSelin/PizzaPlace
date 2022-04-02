@@ -81,7 +81,11 @@ namespace PizzaPlaceDB.DAL
 
         public void Remove(int id)
         {
-            db.Remove(new T { Id = id });
+            var item = Get(id);
+
+            if (item == null) return;
+
+            db.Entry(item).State = EntityState.Deleted;
 
             if (AutoSaveChanges)
                 db.SaveChanges();

@@ -32,8 +32,8 @@ namespace PizzaPlace.BL.Services
             Basket basket = baskets.Items.
                 FirstOrDefault(x => x.FoodId == selectedFood.Id && x.UserId == user.Id);
 
-            food.Remove(selectedFood.Id);
             baskets.Remove(basket.Id);
+            food.Remove(selectedFood.Id);
 
             return selectedFood;
         }
