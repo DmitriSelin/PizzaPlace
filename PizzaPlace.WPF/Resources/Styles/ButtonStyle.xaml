@@ -80,6 +80,9 @@
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Border>
         <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="#0727B3"/>
+            </Trigger>
             <Trigger Property="IsPressed" Value="true">
                 <Setter Property="Background" TargetName="border" Value="#4758b5"/>
             </Trigger>

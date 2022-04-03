@@ -64,13 +64,34 @@ namespace PizzaPlace.WPF.ViewModels
 
             Food = new ObservableCollection<Food>(food.Items);
             Baskets = new ObservableCollection<Basket>(baskets.Items);
+
             BasketFood = new ObservableCollection<Food>();
+
+            FillBasketFood();
 
             #region Commands
 
             BuyCommand = new LambdaCommand(OnBuyCommandExecuted, CanExecute);
 
             #endregion
+        }
+
+        private void FillBasketFood()
+        {
+            BasketFood.Clear();
+
+            foreach (var basket in Baskets)
+            {
+                foreach (var basketFood in Food)
+                {
+                    if (basket.FoodId == basketFood.Id && basket.UserId == user.Id)
+                    {
+                        BasketFood.Add(basketFood);
+                    }
+                }
+            }
+
+            OnPropertyChanged();
         }
     }
 }
