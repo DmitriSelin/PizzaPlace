@@ -70,7 +70,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand GetStatisticViewModelCommand { get; }
 
-        private void OnGetStatisticViewModelCommandExecuted(object p) => CurrentViewModel = new StatisticViewModel();
+        private void OnGetStatisticViewModelCommandExecuted(object p) =>
+            CurrentViewModel = new StatisticViewModel(baskets, food);
 
         #endregion
 
