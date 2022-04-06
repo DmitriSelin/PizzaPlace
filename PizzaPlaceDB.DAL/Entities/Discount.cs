@@ -6,24 +6,24 @@ namespace PizzaPlaceDB.DAL.Entities
 {
     public class Discount : NamedEntity
     {
-        public double Percent { get; set; }
+        public double Number { get; set; }
 
         public virtual ICollection<Basket> Baskets { get; set; }
 
-        public Discount(string name, double percent)
+        public Discount(string name, double number)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
                 throw new ArgumentNullException("Discount's name can not be null", nameof(name));
             }
 
-            if (percent < 0 || percent >= 1)
+            if (number < 0 || number >= 1)
             {
-                throw new ArgumentException("Not correct percent", nameof(percent));
+                throw new ArgumentException("Not correct number", nameof(number));
             }
 
             Name = name;
-            Percent = percent;
+            Number = number;
         }
 
         public Discount() { }

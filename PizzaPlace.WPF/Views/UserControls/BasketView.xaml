@@ -11,7 +11,7 @@
     <Grid Background="{StaticResource BlueColorBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="{StaticResource LightGrayBrush}">
             <Grid.ColumnDefinitions>
