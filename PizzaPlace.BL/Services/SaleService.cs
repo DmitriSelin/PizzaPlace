@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace PizzaPlace.BL.Services
 {
+    /// <summary>Service for buying food</summary>
     public class SaleService : ISaleService
     {
         private readonly IRepository<Food> food;
