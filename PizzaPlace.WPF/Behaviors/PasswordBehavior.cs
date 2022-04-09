@@ -4,6 +4,7 @@ using System.Windows.Controls;
 
 namespace PizzaPlace.WPF.Behaviors
 {
+    /// <summary>Binding PasswordBox</summary>
     public class PasswordBehavior : Behavior<PasswordBox>
     {
         public static readonly DependencyProperty PasswordProperty =
