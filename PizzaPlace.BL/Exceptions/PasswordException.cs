@@ -2,6 +2,7 @@
 
 namespace PizzaPlace.BL.Exceptions
 {
+    /// <summary>User's Exception</summary>
     public class PasswordException : Exception
     {
         public PasswordException() { }
