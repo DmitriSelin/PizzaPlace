@@ -22,6 +22,10 @@ namespace PizzaPlace.BL.Services
             baskets = _baskets;
         }
 
+        /// <summary>Buying food</summary>
+        /// <param name="_selectedFood">User's selected food</param>
+        /// <param name="user">Current user</param>
+        /// <returns>Purchased food</returns>
         public Food BuyFood(object _selectedFood, User user)
         {
             if (_selectedFood == null) 
