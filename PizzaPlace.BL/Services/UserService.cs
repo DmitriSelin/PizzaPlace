@@ -8,6 +8,7 @@ using System.Linq;
 
 namespace PizzaPlace.BL.Services
 {
+    /// <summary>Service for logging or signing users</summary>
     public class UserService : IUserService
     {
         private readonly IRepository<User> users;
@@ -19,6 +20,13 @@ namespace PizzaPlace.BL.Services
             users = _users;
         }
 
+        /// <summary>Log user in system</summary>
+        /// <param name="name">User's name</param>
+        /// <param name="surName">User's surName</param>
+        /// <param name="email">User's email</param>
+        /// <param name="password">User's password</param>
+        /// <param name="repeatPassword">User's repeating password</param>
+        /// <returns>New user</returns>
         public User RegisterUser(string name, string surName, string email,
                                              string password, string repeatPassword)
         {
@@ -38,6 +46,13 @@ namespace PizzaPlace.BL.Services
             return users.Add(user);
         }
 
+        /// <summary>Log user in system</summary>
+        /// <param name="name">User's name</param>
+        /// <param name="surName">User's surName</param>
+        /// <param name="email">User's email</param>
+        /// <param name="password">User's password</param>
+        /// <param name="repeatPassword">User's repeating password</param>
+        /// <returns>New user</returns>
         public async Task<User> RegisterUserAsync(string name, string surName, string email, string password, string repeatPassword)
         {
             if (password != repeatPassword) 
@@ -56,6 +71,10 @@ namespace PizzaPlace.BL.Services
             return await users.AddAsync(user).ConfigureAwait(false);
         }
 
+        /// <summary>User's login to the system</summary>
+        /// <param name="email">Existing's user email</param>
+        /// <param name="password">Existing's user password</param>
+        /// <returns>Existing user</returns>
         public User SignInApp(string email, string password)
         {
             if (string.IsNullOrWhiteSpace(email))
