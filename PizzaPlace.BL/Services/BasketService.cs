@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace PizzaPlace.BL.Services
 {
+    /// <summary>Service for adding food to basket</summary>
     public class BasketService : IBasketService
     {
         private readonly IRepository<Food> food;
@@ -22,6 +23,10 @@ namespace PizzaPlace.BL.Services
             baskets = _baskets;
         }
 
+        /// <summary>Add selected food to basket</summary>
+        /// <param name="food">User's selected food</param>
+        /// <param name="user">Current user</param>
+        /// <returns>new entry in the basket table</returns>
         public Basket PutFoodToBasket(object food, User user)
         {
             if (food == null)
@@ -48,6 +53,10 @@ namespace PizzaPlace.BL.Services
             return baskets.Add(basket);
         }
 
+        /// <summary>Add selected food to basket</summary>
+        /// <param name="food">User's selected food</param>
+        /// <param name="user">Current user</param>
+        /// <returns>new entry in the basket table</returns>
         public async Task<Basket> PutFoodToBasketAsync(object food, User user)
         {
             if (food == null)
