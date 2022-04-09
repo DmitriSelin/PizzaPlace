@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace PizzaPlace.BL.Interfaces
 {
+    /// <summary>Interface for BasketService</summary>
     public interface IBasketService
     {
         Basket PutFoodToBasket(object food, User user);

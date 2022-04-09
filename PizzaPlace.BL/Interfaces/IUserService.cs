@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace PizzaPlace.BL.Interfaces
 {
+    /// <summary>Interface for UserService</summary>
     public interface IUserService
     {
         User RegisterUser(string name, string surName, string email, string password, string repeatPassword);
