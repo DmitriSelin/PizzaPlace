@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace PizzaPlace.BL.Interfaces
 {
+    /// <summary>Base interface for working with Db</summary>
     public interface IRepository<T> where T : class, IEntity, new()
     {
         IQueryable<T> Items { get; }
