@@ -25,10 +25,10 @@ namespace PizzaPlace.WPF.ViewModels
 
         private User user => MainWindowViewModel.User;
 
-        /// <summary>Food entries from Db</summary>
+        /// <summary>Food entries from db</summary>
         public ObservableCollection<Food> Food { get; }
 
-        /// <summary>Baskets entries from Db</summary>
+        /// <summary>Baskets entries from db</summary>
         public ObservableCollection<Basket> Baskets { get; }
 
         /// <summary>Food with foreign key in Baskets entries from Db</summary>

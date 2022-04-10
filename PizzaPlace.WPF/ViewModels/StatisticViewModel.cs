@@ -1,6 +1,11 @@
-﻿using PizzaPlace.BL.Interfaces;
+﻿using LiveCharts;
+using PizzaPlace.BL.Interfaces;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PizzaPlace.WPF.ViewModels
 {
@@ -9,6 +14,19 @@ namespace PizzaPlace.WPF.ViewModels
     {
         private readonly IRepository<Basket> baskets;
         private readonly IRepository<Food> food;
+
+        /// <summary></summary>
+        public ObservableCollection<Basket> Baskets { get; }
+
+        /// <summary></summary>
+        public ObservableCollection<Food> Food { get; }
+
+        /// <summary></summary>
+        public ObservableCollection<Food> BasketFood { get; }
+
+        public ChartValues<decimal> FoodPrices { get; set; }
+
+        public ChartValues<string> FoodNames { get; set; }
 
         private User user
         {
@@ -19,6 +37,33 @@ namespace PizzaPlace.WPF.ViewModels
         {
             baskets = _baskets;
             food = _food;
+
+            Food = new ObservableCollection<Food>(food.Items);
+            Baskets = new ObservableCollection<Basket>(baskets.Items);
+            BasketFood = new ObservableCollection<Food>();
+
+            FillBasketFood();
+
+            FoodPrices = new ChartValues<decimal>(BasketFood.Select(x => x.Price));
+            FoodNames = new ChartValues<string>(BasketFood.Select(x => x.Name));
+        }
+
+        private void FillBasketFood()
+        {
+            BasketFood.Clear();
+
+            foreach (var basket in Baskets)
+            {
+                foreach (var basketFood in Food)
+                {
+                    if (basket.FoodId == basketFood.Id && basket.UserId == user.Id)
+                    {
+                        BasketFood.Add(basketFood);
+                    }
+                }
+            }
+
+            OnPropertyChanged();
         }
     }
 }

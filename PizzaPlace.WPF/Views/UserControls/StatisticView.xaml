@@ -16,8 +16,16 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.RowSpan="2" Text="You have no already no one chart"
-                   Style="{StaticResource NameTextBlockStyle}" HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+        <lvc:CartesianChart Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            <lvc:CartesianChart.Series>
+                <lvc:ColumnSeries Values="{Binding FoodPrices}"/>
+            </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Food" Labels="{Binding FoodNames}"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Prices"/>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>
     </Grid>
 </UserControl>
