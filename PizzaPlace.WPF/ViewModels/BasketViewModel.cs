@@ -36,6 +36,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         #region Commands
 
+        /// <summary>Conditions of executing</summary>
+        /// <returns>true</returns>
         private bool CanExecute(object p) => true;
 
         #region BuyCommand
@@ -81,7 +83,7 @@ namespace PizzaPlace.WPF.ViewModels
             #endregion
         }
 
-        /// <summary>Fill UI Food, put in Baskets</summary>
+        /// <summary>Fill UI Food, added in Baskets</summary>
         private void FillBasketFood()
         {
             BasketFood.Clear();
