@@ -6,6 +6,7 @@ using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
+    /// <summary>MianViewModel for all application</summary>
     public class MainWindowViewModel : ViewModel
     {
         private readonly IRepository<User> users;

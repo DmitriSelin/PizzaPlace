@@ -9,6 +9,7 @@ using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
+    /// <summary>ViewModel for choosing food and adding its to the basket</summary>
     internal class HomeViewModel : ViewModel
     {
         private readonly IRepository<Food> food;
@@ -19,16 +20,20 @@ namespace PizzaPlace.WPF.ViewModels
             get => MainWindowViewModel.User;
         }
 
+        /// <summary>Food entries from db</summary>
         public ObservableCollection<Food> Food { get; }
 
         #region Commands
 
+        /// <summary>Conditions of executing</summary>
+        /// <returns>true</returns>
         private bool CanExecute(object p) => true;
 
         #region AddToCartCommand
 
         public ICommand AddToCartCommand { get; }
 
+        /// <summary>Adding to basket selected food</summary>
         private void OnAddToCartCommandExecuted(object p)
         {
             try

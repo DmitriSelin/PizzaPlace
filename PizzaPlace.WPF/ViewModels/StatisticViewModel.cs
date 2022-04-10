@@ -4,6 +4,7 @@ using PizzaPlaceDB.DAL.Entities;
 
 namespace PizzaPlace.WPF.ViewModels
 {
+    /// <summary>ViewModel for charts, diagrams</summary>
     internal class StatisticViewModel : ViewModel
     {
         private readonly IRepository<Basket> baskets;

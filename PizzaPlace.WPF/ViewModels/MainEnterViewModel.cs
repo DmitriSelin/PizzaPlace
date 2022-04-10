@@ -9,6 +9,7 @@ using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
+    /// <summary>ViewModel for register users in application</summary>
     internal class MainEnterViewModel : ViewModel
     {
         private readonly IRepository<User> users;
@@ -74,6 +75,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand OpenMainUserViewCommand { get; }
 
+        /// <summary>Register user in application</summary>
         private void OnOpenMainUserViewCommandExecuted(object p)
         {
             try
@@ -108,6 +110,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
+        /// <summary>Conditions of executing</summary>
+        /// <returns>true</returns>
         private bool CanExecute(object p) => true;
 
         #endregion
