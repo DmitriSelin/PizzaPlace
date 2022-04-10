@@ -3,6 +3,7 @@ using PizzaPlaceDB.DAL.Entities;
 
 namespace PizzaPlaceDB.DAL.Context
 {
+    /// <summary>Db context</summary>
     public class PizzaPlaceContext : DbContext
     {
         public DbSet<User> Users { get; set; }
@@ -26,6 +27,7 @@ namespace PizzaPlaceDB.DAL.Context
             Database.EnsureCreated();
         }
 
+        /// <summary>Connecting to SQL server</summary>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString: "Server=(localdb)\\mssqllocaldb;Database=PizzaPlaceDb;Trusted_Connection=True;");

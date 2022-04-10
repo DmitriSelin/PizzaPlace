@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PizzaPlaceDB.DAL
 {
+    /// <summary>Class for base logic of working with db</summary>
     internal class DbRepository<T> : IRepository<T> where T : Entity, new()
     {
         private readonly PizzaPlaceContext db;
