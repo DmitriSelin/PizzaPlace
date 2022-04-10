@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace PizzaPlace.WPF.Infrastructure.Commands.BaseCommand
 {
+    /// <summary>Base class for commands</summary>
     public abstract class Command : ICommand
     {
         public event EventHandler CanExecuteChanged
