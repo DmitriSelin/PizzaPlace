@@ -8,6 +8,7 @@ using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
 {
+    /// <summary>ViewModel for buying food</summary>
     internal class BasketViewModel : ViewModel
     {
         private readonly IRepository<Food> food;
@@ -24,10 +25,13 @@ namespace PizzaPlace.WPF.ViewModels
 
         private User user => MainWindowViewModel.User;
 
+        /// <summary>Food entries from Db</summary>
         public ObservableCollection<Food> Food { get; }
 
+        /// <summary>Baskets entries from Db</summary>
         public ObservableCollection<Basket> Baskets { get; }
 
+        /// <summary>Food with foreign key in Baskets entries from Db</summary>
         public ObservableCollection<Food> BasketFood { get; private set; }
 
         #region Commands
@@ -38,6 +42,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand BuyCommand { get; }
 
+        /// <summary>Buying user's selected food </summary>
         private void OnBuyCommandExecuted(object p)
         {
             try
@@ -76,6 +81,7 @@ namespace PizzaPlace.WPF.ViewModels
             #endregion
         }
 
+        /// <summary>Fill UI Food, put in Baskets</summary>
         private void FillBasketFood()
         {
             BasketFood.Clear();
