@@ -31,7 +31,7 @@ namespace PizzaPlace.WPF.ViewModels
         /// <summary>Baskets entries from db</summary>
         public ObservableCollection<Basket> Baskets { get; }
 
-        /// <summary>Food with foreign key in Baskets entries from Db</summary>
+        /// <summary>Food entries with foreign key in Baskets from db</summary>
         public ObservableCollection<Food> BasketFood { get; private set; }
 
         #region Commands
@@ -83,7 +83,7 @@ namespace PizzaPlace.WPF.ViewModels
             #endregion
         }
 
-        /// <summary>Fill UI Food, added in Baskets</summary>
+        /// <summary>Adding food, added to basket, to Baskets</summary>
         private void FillBasketFood()
         {
             BasketFood.Clear();

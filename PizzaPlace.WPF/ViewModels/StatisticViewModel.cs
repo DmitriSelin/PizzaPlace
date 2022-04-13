@@ -15,13 +15,13 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Basket> baskets;
         private readonly IRepository<Food> food;
 
-        /// <summary></summary>
+        /// <summary>Basket entries from db</summary>
         public ObservableCollection<Basket> Baskets { get; }
 
-        /// <summary></summary>
+        /// <summary>Food entries from db</summary>
         public ObservableCollection<Food> Food { get; }
 
-        /// <summary></summary>
+        /// <summary>Food entries with foreign key in Baskets from db</summary>
         public ObservableCollection<Food> BasketFood { get; }
 
         public ChartValues<decimal> FoodPrices { get; set; }

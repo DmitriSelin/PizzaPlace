@@ -18,13 +18,17 @@
         </Grid.RowDefinitions>
         <lvc:CartesianChart Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
             <lvc:CartesianChart.Series>
-                <lvc:ColumnSeries Values="{Binding FoodPrices}" Foreground="Black"/>
+                <lvc:ColumnSeries Values="{Binding FoodPrices}" Title=""
+                                  Foreground="{StaticResource BlackColorBrush}"
+                                  Fill="ForestGreen"/>
             </lvc:CartesianChart.Series>
             <lvc:CartesianChart.AxisX>
-                <lvc:Axis Title="Food" Labels="{Binding FoodNames}" Foreground="Black"/>
+                <lvc:Axis Title="Food" FontSize="16" Labels="{Binding FoodNames}"
+                          Foreground="{StaticResource BlackColorBrush}" Margin="5"/>
             </lvc:CartesianChart.AxisX>
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Prices" Foreground="Black"/>
+                <lvc:Axis Title="Prices" Foreground="{StaticResource BlackColorBrush}" FontSize="16"
+                          Margin="5"/>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
     </Grid>
