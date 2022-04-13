@@ -2,10 +2,8 @@
 using PizzaPlace.BL.Interfaces;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace PizzaPlace.WPF.ViewModels
 {
@@ -28,10 +26,7 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ChartValues<string> FoodNames { get; set; }
 
-        private User user
-        {
-            get => MainWindowViewModel.User;
-        }
+        private User user => MainWindowViewModel.User;
 
         public StatisticViewModel(IRepository<Basket> _baskets, IRepository<Food> _food)
         {
