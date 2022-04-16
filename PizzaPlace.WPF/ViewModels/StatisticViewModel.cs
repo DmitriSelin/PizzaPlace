@@ -22,9 +22,9 @@ namespace PizzaPlace.WPF.ViewModels
         /// <summary>Food entries with foreign key in Baskets from db</summary>
         public ObservableCollection<Food> BasketFood { get; }
 
-        public ChartValues<decimal> FoodPrices { get; set; }
+        public ChartValues<decimal> FoodPrices { get; private set; }
 
-        public ChartValues<string> FoodNames { get; set; }
+        public ChartValues<string> FoodNames { get; private set; }
 
         private User user => MainWindowViewModel.User;
 

@@ -27,7 +27,7 @@
                           Foreground="{StaticResource BlackColorBrush}" Margin="5"/>
             </lvc:CartesianChart.AxisX>
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Prices" Foreground="{StaticResource BlackColorBrush}" FontSize="16"
+                <lvc:Axis Title="Prices $" Foreground="{StaticResource BlackColorBrush}" FontSize="16"
                           Margin="5"/>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
