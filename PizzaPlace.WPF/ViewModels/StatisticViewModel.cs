@@ -1,9 +1,12 @@
 ﻿using LiveCharts;
+using LiveCharts.Configurations;
+using LiveCharts.Defaults;
 using PizzaPlace.BL.Interfaces;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Media;
 
 namespace PizzaPlace.WPF.ViewModels
 {
@@ -22,6 +25,18 @@ namespace PizzaPlace.WPF.ViewModels
         /// <summary>Food entries with foreign key in Baskets from db</summary>
         public ObservableCollection<Food> BasketFood { get; }
 
+        public CartesianMapper<ObservableValue> Mapper { get; set; }
+
+        #region Brushes
+
+        private Brush forestGreenBrush = new SolidColorBrush(Colors.ForestGreen);
+
+        private Brush darkOrangeBrush = new SolidColorBrush(Colors.DarkOrange);
+
+        private Brush darkBlueBrush = new SolidColorBrush(Colors.DarkBlue);
+
+        #endregion
+
         public ChartValues<decimal> FoodPrices { get; private set; }
 
         public ChartValues<string> FoodNames { get; private set; }
@@ -38,6 +53,11 @@ namespace PizzaPlace.WPF.ViewModels
             BasketFood = new ObservableCollection<Food>();
 
             FillBasketFood();
+
+            Mapper = Mappers.Xy<ObservableValue>()
+                .X((item, index) => index)
+                .Y(item => item.Value)
+                .Fill(item => item.Value > 40 ? forestGreenBrush : darkOrangeBrush);
 
             FoodPrices = new ChartValues<decimal>(BasketFood.Select(x => x.Price));
             FoodNames = new ChartValues<string>(BasketFood.Select(x => x.Name));
