@@ -57,7 +57,7 @@ namespace PizzaPlace.WPF.ViewModels
             Mapper = Mappers.Xy<ObservableValue>()
                 .X((item, index) => index)
                 .Y(item => item.Value)
-                .Fill(item => item.Value > 40 ? forestGreenBrush : darkOrangeBrush);
+                .Fill(item => item.Value > 40 ? darkOrangeBrush : darkBlueBrush);
 
             FoodPrices = new ChartValues<decimal>(BasketFood.Select(x => x.Price));
             FoodNames = new ChartValues<string>(BasketFood.Select(x => x.Name));
