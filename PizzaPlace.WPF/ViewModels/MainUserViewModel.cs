@@ -2,6 +2,7 @@
 using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -71,8 +72,17 @@ namespace PizzaPlace.WPF.ViewModels
 
         public ICommand GetStatisticViewModelCommand { get; }
 
-        private void OnGetStatisticViewModelCommandExecuted(object p) =>
-            CurrentViewModel = new StatisticViewModel(baskets, food);
+        private void OnGetStatisticViewModelCommandExecuted(object p)
+        {
+            if (baskets.Items == null || baskets.Items is null)
+            {
+                CurrentViewModel = new StatisticViewModel(baskets, food);
+            }
+            else
+            {
+                MessageBox.Show("You have no one food in your basket!");
+            }
+        }
 
         #endregion
 
