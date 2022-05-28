@@ -2,7 +2,7 @@
 
 namespace PizzaPlace.WPF.ViewModels
 {
-    /// <summary>allows to add the MainWindowViewModel</summary>
+    /// <summary>Allows to add the MainWindowViewModel</summary>
     public static class ViewModelRegistrator
     {
         /// <summary>Adding ViewModel</summary>

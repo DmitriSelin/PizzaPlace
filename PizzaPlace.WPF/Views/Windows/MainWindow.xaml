@@ -81,7 +81,7 @@
                Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type vm:EnterViewModel}">
-                    
+                    <views:Enter DataContext="{Binding}"/>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:MainUserViewModel}">
                     <views:MainUser DataContext="{Binding}"/>
