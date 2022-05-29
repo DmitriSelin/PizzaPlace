@@ -4,6 +4,7 @@ using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PizzaPlace.WPF.ViewModels
@@ -15,12 +16,22 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IRepository<Basket> baskets;
         private readonly ISaleService saleService;
 
+        #region Properties
+
         private object selectedFood;
 
         public object SelectedFood
         {
             get => selectedFood;
             set => Set(ref selectedFood, value);
+        }
+
+        private Visibility noBasketFoodTextBlockVisibility;
+
+        public Visibility NoBasketFoodTextBlockVisibility
+        {
+            get => noBasketFoodTextBlockVisibility;
+            set => Set(ref noBasketFoodTextBlockVisibility, value);
         }
 
         private User user => MainWindowViewModel.User;
@@ -33,6 +44,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         /// <summary>Food entries with foreign key in Baskets from db</summary>
         public ObservableCollection<Food> BasketFood { get; private set; }
+
+        #endregion
 
         #region Commands
 
@@ -51,6 +64,15 @@ namespace PizzaPlace.WPF.ViewModels
             {
                 saleService.BuyFood(SelectedFood, user);
                 BasketFood.Remove((Food)SelectedFood);
+
+                if (BasketFood.Count == 0 || Baskets.Count == 0)
+                {
+                    NoBasketFoodTextBlockVisibility = Visibility.Visible;
+                }
+                else
+                {
+                    NoBasketFoodTextBlockVisibility = Visibility.Collapsed;
+                }
             }
             catch (UserInputException)
             {
@@ -72,9 +94,18 @@ namespace PizzaPlace.WPF.ViewModels
             Food = new ObservableCollection<Food>(food.Items);
             Baskets = new ObservableCollection<Basket>(baskets.Items);
 
-            BasketFood = new ObservableCollection<Food>();
+            if (Baskets.Count == 0)
+            {
+                noBasketFoodTextBlockVisibility = Visibility.Visible;
+            }
+            else
+            {
+                noBasketFoodTextBlockVisibility = Visibility.Collapsed;
 
-            FillBasketFood();
+                BasketFood = new ObservableCollection<Food>();
+
+                FillBasketFood();
+            }
 
             #region Commands
 

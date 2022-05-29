@@ -13,6 +13,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Text="You don't add any food in your basket"
+                   Style="{StaticResource NameTextBlockStyle}"
+                   VerticalAlignment="Center" FontSize="40"
+                   Visibility="{Binding NoBasketFoodTextBlockVisibility}"/>
         <Grid Grid.Row="0" Background="{StaticResource LightGrayBrush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

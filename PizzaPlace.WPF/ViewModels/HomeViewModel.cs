@@ -40,6 +40,15 @@ namespace PizzaPlace.WPF.ViewModels
             {
                 basketService.PutFoodToBasket(SelectedFood, User);
                 Food.Remove((Food)SelectedFood);
+
+                if (Food.Count == 0)
+                {
+                    NoFoodTextBlockVisibility = Visibility.Visible;
+                }
+                else
+                {
+                    NoFoodTextBlockVisibility = Visibility.Collapsed;
+                }
             }
             catch(UserInputException)
             {
@@ -67,6 +76,14 @@ namespace PizzaPlace.WPF.ViewModels
             set => Set(ref selectedFood, value);
         }
 
+        private Visibility noFoodTextBlockVisibility;
+
+        public Visibility NoFoodTextBlockVisibility
+        {
+            get => noFoodTextBlockVisibility;
+            set => Set(ref noFoodTextBlockVisibility, value);
+        }
+
         #endregion
 
         public HomeViewModel(IRepository<Food> _food, IRepository<Basket> _baskets, IBasketService _basketService)
@@ -76,6 +93,15 @@ namespace PizzaPlace.WPF.ViewModels
             basketService = _basketService;
 
             Food = new ObservableCollection<Food>(food.Items);
+
+            if (Food.Count == 0)
+            {
+                noFoodTextBlockVisibility = Visibility.Visible;
+            }
+            else
+            {
+                noFoodTextBlockVisibility = Visibility.Collapsed;
+            }
 
             #region Commands
 

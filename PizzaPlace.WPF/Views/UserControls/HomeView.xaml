@@ -17,6 +17,8 @@
             <RowDefinition Height="*" MaxHeight="50"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Text="There is no food available" Style="{StaticResource NameTextBlockStyle}"
+                   FontSize="50" VerticalAlignment="Center" Visibility="{Binding NoFoodTextBlockVisibility}"/>
         <Grid Grid.Row="0" Background="{StaticResource LightGrayBrush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>

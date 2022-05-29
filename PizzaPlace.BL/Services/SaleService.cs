@@ -29,7 +29,7 @@ namespace PizzaPlace.BL.Services
         /// <returns>Purchased food</returns>
         public Food BuyFood(object _selectedFood, User user)
         {
-            if (_selectedFood == null) 
+            if (_selectedFood == null)
                 throw new UserInputException("User didn't select the food");
 
             Food selectedFood = (Food)_selectedFood;

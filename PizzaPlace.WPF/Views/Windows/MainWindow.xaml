@@ -9,7 +9,9 @@
         xmlns:local="clr-namespace:PizzaPlace.WPF"
         DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         mc:Ignorable="d"
-        Title="Pizza Place" Height="450" Width="800">
+        Title="Pizza Place" MinHeight="600" MinWidth="1000" 
+        d:Height="600" d:Width="1000"
+        ResizeMode="CanResize" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
