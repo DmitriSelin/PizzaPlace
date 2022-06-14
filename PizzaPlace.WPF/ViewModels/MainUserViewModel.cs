@@ -2,6 +2,7 @@
 using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 
@@ -21,6 +22,8 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly ISaleService saleService;
 
         internal User user;
+
+        private ObservableCollection<Basket> basketFood;
 
         private ViewModel currentViewModel;
 
@@ -74,7 +77,9 @@ namespace PizzaPlace.WPF.ViewModels
 
         private void OnGetStatisticViewModelCommandExecuted(object p)
         {
-            if (baskets.Items == null || baskets.Items is null)
+            basketFood = new ObservableCollection<Basket>(baskets.Items);
+
+            if (basketFood.Count > 0)
             {
                 CurrentViewModel = new StatisticViewModel(baskets, food);
             }
