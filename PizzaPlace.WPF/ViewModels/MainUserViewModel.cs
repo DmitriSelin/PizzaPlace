@@ -21,6 +21,8 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IBasketService basketService;
         private readonly ISaleService saleService;
 
+        #region Fields and Properties
+
         internal User user;
 
         private ObservableCollection<Basket> basketFood;
@@ -32,6 +34,8 @@ namespace PizzaPlace.WPF.ViewModels
             get => currentViewModel;
             set => Set(ref currentViewModel, value);
         }
+
+        #endregion
 
         #region Commands
 
