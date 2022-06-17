@@ -16,7 +16,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <lvc:CartesianChart Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+        <lvc:CartesianChart Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                            Grid.ColumnSpan="2">
             <lvc:CartesianChart.Series>
                 <lvc:ColumnSeries x:Name="Diagram" Values="{Binding FoodPrices}"
                                   Title="" Foreground="{StaticResource BlackColorBrush}"
