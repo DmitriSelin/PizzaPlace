@@ -20,8 +20,7 @@
                             Grid.ColumnSpan="2">
             <lvc:CartesianChart.Series>
                 <lvc:ColumnSeries x:Name="Diagram" Values="{Binding FoodPrices}"
-                                  Title="" Foreground="{StaticResource BlackColorBrush}"
-                                  Configuration="{Binding Mapper}"/>
+                                  Title="" Foreground="{StaticResource BlackColorBrush}"/>
             </lvc:CartesianChart.Series>
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Title="Food" FontSize="16" Labels="{Binding FoodNames}"
