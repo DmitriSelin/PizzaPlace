@@ -13,7 +13,7 @@ namespace PizzaPlace.WPF.Infrastructure.Commands
         public LambdaCommand(Action<object> Execute, Func<object, bool> CanExecute = null)
         {
             execute = Execute ?? throw new ArgumentNullException(nameof(Execute));
-            canExecute = CanExecute;
+            canExecute = CanExecute; 
         }
 
         /// <summary>Conditions for executing the command</summary>
