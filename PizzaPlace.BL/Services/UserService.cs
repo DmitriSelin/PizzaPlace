@@ -87,13 +87,7 @@ namespace PizzaPlace.BL.Services
                 throw new ArgumentNullException("Password can not be null", nameof(password));
             }
 
-            var user = new User
-            {
-                Email = email,
-                Password = password
-            };
-
-            User enterUser = users.Items.SingleOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+            User enterUser = users.Items.SingleOrDefault(x => x.Email == email && x.Password == password);
 
             if (enterUser == null)
             {

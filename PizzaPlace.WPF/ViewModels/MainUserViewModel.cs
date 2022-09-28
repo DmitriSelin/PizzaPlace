@@ -114,7 +114,7 @@ namespace PizzaPlace.WPF.ViewModels
             saleService = _saleService;
             user = MainWindowViewModel.User;
 
-            currentViewModel = new HomeViewModel(food, baskets, basketService);
+            currentViewModel = new HomeViewModel(food, basketService);
 
             #region Commands
 

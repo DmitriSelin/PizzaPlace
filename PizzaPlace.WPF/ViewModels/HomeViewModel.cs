@@ -13,8 +13,8 @@ namespace PizzaPlace.WPF.ViewModels
     internal class HomeViewModel : ViewModel
     {
         private readonly IRepository<Food> food;
-        private readonly IRepository<Basket> baskets;
         private readonly IBasketService basketService;
+
         private User User
         {
             get => MainWindowViewModel.User;
@@ -86,10 +86,9 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public HomeViewModel(IRepository<Food> _food, IRepository<Basket> _baskets, IBasketService _basketService)
+        public HomeViewModel(IRepository<Food> _food, IBasketService _basketService)
         {
             food = _food;
-            baskets = _baskets;
             basketService = _basketService;
 
             Food = new ObservableCollection<Food>(food.Items);

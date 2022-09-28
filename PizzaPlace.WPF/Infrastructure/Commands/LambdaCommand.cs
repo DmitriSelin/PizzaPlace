@@ -6,23 +6,23 @@ namespace PizzaPlace.WPF.Infrastructure.Commands
     /// <summary>Class for creating commands</summary>
     class LambdaCommand : Command
     {
-        private readonly Action<object> execute;
+        private readonly Action<object> _execute;
 
-        private readonly Func<object, bool> canExecute;
+        private readonly Func<object, bool> _canExecute;
 
-        public LambdaCommand(Action<object> Execute, Func<object, bool> CanExecute = null)
+        public LambdaCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
-            execute = Execute ?? throw new ArgumentNullException(nameof(Execute));
-            canExecute = CanExecute; 
+            _execute = execute ?? throw new ArgumentNullException(nameof(_execute));
+            _canExecute = canExecute; 
         }
 
         /// <summary>Conditions for executing the command</summary>
         public override bool CanExecute(object parameter)
         {
-            return canExecute?.Invoke(parameter) ?? true;
+            return _canExecute?.Invoke(parameter) ?? true;
         }
 
         /// <summary>Command's logic</summary>
-        public override void Execute(object parameter) => execute(parameter);
+        public override void Execute(object parameter) => _execute(parameter);
     }
 }

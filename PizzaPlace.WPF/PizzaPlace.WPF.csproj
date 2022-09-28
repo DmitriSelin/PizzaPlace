@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\Templates\**" />
+    <EmbeddedResource Remove="Resources\Templates\**" />
+    <None Remove="Resources\Templates\**" />
+    <Page Remove="Resources\Templates\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FontAwesome5" Version="2.1.11" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
@@ -17,10 +24,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PizzaPlace.BL\PizzaPlace.BL.csproj" />
+    <ProjectReference Include="..\PizzaPlace.Interfaces\PizzaPlace.Interfaces.csproj" />
+    <ProjectReference Include="..\PizzaPlaceDB.DAL\PizzaPlaceDB.DAL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Templates\" />
     <Folder Include="Resources\Images\" />
   </ItemGroup>
 

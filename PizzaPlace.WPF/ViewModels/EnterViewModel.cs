@@ -12,7 +12,6 @@ namespace PizzaPlace.WPF.ViewModels
     /// <summary>ViewModel for registered users</summary>
     public class EnterViewModel : ViewModel
     {
-        private readonly IRepository<User> users;
         private readonly IUserService userService;
         private readonly MainWindowViewModel mainViewModel;
         internal User User;
@@ -49,8 +48,10 @@ namespace PizzaPlace.WPF.ViewModels
             try
             {
                 User = userService.SignInApp(Email, Password);
+
                 mainViewModel.GetMainUserViewModel();
                 mainViewModel.UserName = User.Name;
+
                 MainWindowViewModel.User = User;
             }
             catch(ArgumentNullException)
@@ -82,9 +83,8 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public EnterViewModel(IRepository<User> _users, IUserService _userService, MainWindowViewModel _mainViewModel)
+        public EnterViewModel(IUserService _userService, MainWindowViewModel _mainViewModel)
         {
-            users = _users;
             userService = _userService;
             mainViewModel = _mainViewModel;
 
