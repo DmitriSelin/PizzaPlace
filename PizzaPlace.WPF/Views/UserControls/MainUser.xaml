@@ -7,26 +7,26 @@
              xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
              xmlns:views="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="1000">
     <Grid Background="{StaticResource MainColorBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Background="#7E7E80">
-            <Button Style="{StaticResource StackButtonStyle}"
+            <Button Style="{StaticResource StackButtonStyle}" d:Padding="5"
                     Command="{Binding GetHomeViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_Home" Margin="15"/>
             </Button>
-            <Button Style="{StaticResource StackButtonStyle}"
+            <Button Style="{StaticResource StackButtonStyle}" d:Padding="5"
                     Command="{Binding GetBasketViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_ShoppingCart" Margin="15"/>
             </Button>
-            <Button Style="{StaticResource StackButtonStyle}"
+            <Button Style="{StaticResource StackButtonStyle}" d:Padding="5"
                     Command="{Binding GetDiscountViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_Percent" Margin="15"/>
             </Button>
-            <Button Style="{StaticResource StackButtonStyle}"
+            <Button Style="{StaticResource StackButtonStyle}" d:Padding="5"
                     Command="{Binding GetStatisticViewModelCommand}">
                 <fa:ImageAwesome Icon="Solid_ChartArea" Margin="15"/>
             </Button>
