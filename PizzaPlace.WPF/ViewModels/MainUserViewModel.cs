@@ -46,7 +46,7 @@ namespace PizzaPlace.WPF.ViewModels
         public ICommand GetHomeViewModelCommand { get; }
 
         private void OnGetHomeViewModelCommandExecuted(object p) =>
-            CurrentViewModel = new HomeViewModel(food, baskets, basketService);
+            CurrentViewModel = new HomeViewModel(food, basketService);
 
         #endregion
 

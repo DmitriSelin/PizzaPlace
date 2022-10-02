@@ -30,7 +30,7 @@ namespace PizzaPlaceDB.DAL.Context
         /// <summary>Connecting to SQL server</summary>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString: @"Server=DIMITRI\SQLEXPRESS;Database=PizzaPlaceDb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(connectionString: @"Server=DIMITRY\SQLEXPRESS;Database=PizzaPlaceDb;Trusted_Connection=True;");
         }
     }
 }
