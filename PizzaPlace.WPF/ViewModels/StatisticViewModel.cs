@@ -1,12 +1,9 @@
 ﻿using LiveCharts;
-using LiveCharts.Configurations;
-using LiveCharts.Defaults;
 using PizzaPlace.BL.Interfaces;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows.Media;
 
 namespace PizzaPlace.WPF.ViewModels
 {

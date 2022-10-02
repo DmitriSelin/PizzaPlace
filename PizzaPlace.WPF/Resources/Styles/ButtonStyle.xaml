@@ -52,7 +52,8 @@
         <Setter Property="BorderBrush" Value="DarkGray"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="Padding" Value="1"/>
+        <Setter Property="MaxHeight" Value="175"/>
+        <Setter Property="Padding" Value="30"/>
         <Setter Property="Template" Value="{DynamicResource StackButtonTemplate}"/>
     </Style>
 

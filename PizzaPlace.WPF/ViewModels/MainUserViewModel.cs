@@ -11,13 +11,8 @@ namespace PizzaPlace.WPF.ViewModels
     /// <summary>Base ViewModel for working with another VMs</summary>
     internal class MainUserViewModel : ViewModel
     {
-        private readonly IRepository<User> users;
         private readonly IRepository<Basket> baskets;
-        private readonly IRepository<Bonus> bonuses;
-        private readonly IRepository<Category> categories;
-        private readonly IRepository<Discount> discounts;
         private readonly IRepository<Food> food;
-        private readonly IRepository<Order> orders;
         private readonly IBasketService basketService;
         private readonly ISaleService saleService;
 
@@ -67,14 +62,6 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        #region GetHistoryViewModelCommand
-
-        public ICommand GetHistoryViewModelCommand { get; }
-
-        private void OnGetHistoryViewModelCommandExecuted(object p) => CurrentViewModel = new HistoryViewModel();
-
-        #endregion
-
         #region GetStatisticViewModelCommand
 
         public ICommand GetStatisticViewModelCommand { get; }
@@ -97,19 +84,11 @@ namespace PizzaPlace.WPF.ViewModels
 
         #endregion
 
-        public MainUserViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
-                            IRepository<Bonus> _bonuses, IRepository<Category> _categories,
-                            IRepository<Discount> _discounts, IRepository<Food> _food,
-                            IRepository<Order> _orders, IBasketService _basketService,
-                            ISaleService _saleService)
+        public MainUserViewModel(IRepository<Basket> _baskets, IRepository<Food> _food, 
+                                IBasketService _basketService, ISaleService _saleService)
         {
-            users = _users;
             baskets = _baskets;
-            bonuses = _bonuses;
-            categories = _categories;
-            discounts = _discounts;
             food = _food;
-            orders = _orders;
             basketService = _basketService;
             saleService = _saleService;
             user = MainWindowViewModel.User;
@@ -123,8 +102,6 @@ namespace PizzaPlace.WPF.ViewModels
             GetBasketViewModelCommand = new LambdaCommand(OnGetBasketViewModelCommandExecuted, CanExecute);
 
             GetDiscountViewModelCommand = new LambdaCommand(OnGetDiscountViewModelCommandExecuted, CanExecute);
-
-            GetHistoryViewModelCommand = new LambdaCommand(OnGetHistoryViewModelCommandExecuted, CanExecute);
 
             GetStatisticViewModelCommand = new LambdaCommand(OnGetStatisticViewModelCommandExecuted, CanExecute);
             #endregion

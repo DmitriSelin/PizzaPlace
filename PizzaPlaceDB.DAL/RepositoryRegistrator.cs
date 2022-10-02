@@ -13,7 +13,6 @@ namespace PizzaPlaceDB.DAL
             .AddTransient<IRepository<Category>, DbRepository<Category>>()
             .AddTransient<IRepository<Discount>, DbRepository<Discount>>()
             .AddTransient<IRepository<Food>, FoodRepository>()
-            .AddTransient<IRepository<Order>, OrderRepository>()
             .AddTransient<IRepository<User>, UserRepository>()
             ;
     }

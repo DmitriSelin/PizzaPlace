@@ -18,8 +18,6 @@ namespace PizzaPlaceDB.DAL.Context
 
         public DbSet<Category> Categories { get; set; }
 
-        public DbSet<Order> Orders { get; set; }
-
         public DbSet<Bonus> Bonuses { get; set; }
 
         public PizzaPlaceContext()

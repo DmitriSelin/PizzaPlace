@@ -11,11 +11,7 @@ namespace PizzaPlace.WPF.ViewModels
     {
         private readonly IRepository<User> users;
         private readonly IRepository<Basket> baskets;
-        private readonly IRepository<Bonus> bonuses;
-        private readonly IRepository<Category> categories;
-        private readonly IRepository<Discount> discounts;
         private readonly IRepository<Food> food;
-        private readonly IRepository<Order> orders;
         private readonly IUserService userService;
         private readonly IBasketService basketService;
         private readonly ISaleService saleService;
@@ -55,16 +51,12 @@ namespace PizzaPlace.WPF.ViewModels
         public MainWindowViewModel(IRepository<User> _users, IRepository<Basket> _baskets,
                             IRepository<Bonus> _bonuses, IRepository<Category> _categories,
                             IRepository<Discount> _discounts, IRepository<Food> _food,
-                            IRepository<Order> _orders, IUserService _userService,
-                            IBasketService _basketService, ISaleService _saleService)
+                            IUserService _userService, IBasketService _basketService,
+                            ISaleService _saleService)
         {
             users = _users;
             baskets = _baskets;
-            bonuses = _bonuses;
-            categories = _categories;
-            discounts = _discounts;
             food = _food;
-            orders = _orders;
             userService = _userService;
             basketService = _basketService;
             saleService = _saleService;
@@ -73,8 +65,7 @@ namespace PizzaPlace.WPF.ViewModels
 
             enterViewModel = new EnterViewModel(userService, this);
 
-            mainUserViewModel = new MainUserViewModel(users, baskets, bonuses, categories, discounts,
-                food, orders, basketService, saleService);
+            mainUserViewModel = new MainUserViewModel(baskets, food, basketService, saleService);
 
             currentViewModel = enterViewModel;
 
@@ -85,7 +76,7 @@ namespace PizzaPlace.WPF.ViewModels
             #endregion
         }
 
-        #region VM_Methods
+        #region UserControl's changing methods
         internal void GetMainUserViewModel()
         {
             CurrentViewModel = mainUserViewModel;
