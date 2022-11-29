@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FontAwesome5" Version="2.1.11" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
@@ -29,7 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Models\ddd\" />
     <Folder Include="Resources\Images\" />
+    <Folder Include="Services\kk\" />
   </ItemGroup>
 
 </Project>

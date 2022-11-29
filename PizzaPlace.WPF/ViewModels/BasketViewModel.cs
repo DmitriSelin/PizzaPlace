@@ -76,6 +76,9 @@ namespace PizzaPlace.WPF.ViewModels
             }
             catch (UserInputException)
             {
+                MessageBox.Show("You don't select any pizza", "", 
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+
                 return;
             }
         }
