@@ -72,7 +72,7 @@
                         Content="Register" Margin="20, 15"/>
             </Grid>
         </Border>
-        <Border Grid.Column="1" CornerRadius="20" 
+        <Border Grid.Column="1" CornerRadius="20" d:Visibility="Hidden" 
                 Background="#F8F8FA"
                 Visibility="{Binding PasswordPopupVisibility}">
             <Grid>
