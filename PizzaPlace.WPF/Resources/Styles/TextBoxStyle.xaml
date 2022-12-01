@@ -23,5 +23,6 @@
         <Setter Property="MaxLength" Value="30"/>
         <Setter Property="PasswordBox.SelectionBrush" Value="{DynamicResource DefaultBlueColor}"/>
         <Setter Property="Background" Value="{DynamicResource LightGrayBrush}"/>
+        <Setter Property="Padding" Value="0, 0, 15, 0"/>
     </Style>
 </ResourceDictionary>
