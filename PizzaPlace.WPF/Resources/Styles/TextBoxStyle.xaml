@@ -15,4 +15,13 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
+
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource MaterialDesignRevealPasswordBox}">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MaxLength" Value="30"/>
+        <Setter Property="PasswordBox.SelectionBrush" Value="{DynamicResource DefaultBlueColor}"/>
+        <Setter Property="Background" Value="{DynamicResource LightGrayBrush}"/>
+    </Style>
 </ResourceDictionary>

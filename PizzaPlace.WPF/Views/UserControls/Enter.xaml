@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PizzaPlace.WPF.Views.UserControls"
              xmlns:vm="clr-namespace:PizzaPlace.WPF.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:behaviors="clr-namespace:PizzaPlace.WPF.Behaviors"
@@ -48,7 +49,7 @@
                                Style="{StaticResource BoldTextBlockStyle}"/>
                 </WrapPanel>
                 <TextBox Style="{StaticResource LoginStyle}" Grid.Column="0" Grid.Row="3"
-                         Grid.ColumnSpan="2" VerticalContentAlignment="Center" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
+                         Grid.ColumnSpan="2" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
                          Background="{StaticResource LightGrayBrush}" BorderThickness="0"/>
                 <WrapPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
                     <fa:ImageAwesome Icon="Solid_Lock"
@@ -56,11 +57,9 @@
                     <TextBlock Text="Password" Foreground="{StaticResource IconTextBrush}"
                                Style="{StaticResource BoldTextBlockStyle}"/>
                 </WrapPanel>
-                <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
-                             VerticalContentAlignment="Center"
-                             Style="{StaticResource PasswordStyle}" 
-                             Background="{StaticResource LightGrayBrush}"
-                             MaxLength="30">
+                <PasswordBox Grid.Column="0"
+                             Grid.Row="5"
+                             Grid.ColumnSpan="2">
                     <b:Interaction.Behaviors>
                         <behaviors:PasswordBehavior Password="{Binding Password, Mode=TwoWay}"/>
                     </b:Interaction.Behaviors>
