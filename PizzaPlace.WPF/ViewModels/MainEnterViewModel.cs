@@ -92,6 +92,13 @@ namespace PizzaPlace.WPF.ViewModels
             }
             catch (ArgumentException)
             {
+                if (Password.Length < 6)
+                {
+                    MessageBox.Show("The password must have at least 6 characters", "", 
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 MessageBox.Show("Incorrect email or password", "", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }

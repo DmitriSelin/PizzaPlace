@@ -43,7 +43,7 @@ namespace PizzaPlaceDB.DAL.Entities
             {
                 throw new ArgumentNullException("Password can not be null", nameof(password));
             }
-            else if (password.Length < 8 || password.Length > 50)
+            else if (password.Length < 6 || password.Length > 50)
             {
                 throw new ArgumentException("Not correct password", nameof(password));
             }
