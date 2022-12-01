@@ -4,6 +4,7 @@ using PizzaPlace.WPF.Infrastructure.Commands;
 using PizzaPlace.WPF.ViewModels.Base;
 using PizzaPlaceDB.DAL.Entities;
 using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 
@@ -15,6 +16,7 @@ namespace PizzaPlace.WPF.ViewModels
         private readonly IUserService userService;
         private readonly MainWindowViewModel mainViewModel;
         internal User User;
+        private int enterClicks = 0;
 
         #region Properties
 
@@ -32,6 +34,14 @@ namespace PizzaPlace.WPF.ViewModels
         {
             get => password;
             set => Set(ref password, value);
+        }
+
+        private Visibility passwordPopupVisibility = Visibility.Collapsed;
+
+        public Visibility PasswordPopupVisibility
+        {
+            get => passwordPopupVisibility;
+            set => Set(ref passwordPopupVisibility, value);
         }
 
         #endregion
@@ -56,13 +66,34 @@ namespace PizzaPlace.WPF.ViewModels
             }
             catch(ArgumentNullException)
             {
-                MessageBox.Show("Incorrect email or password", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Incorrect email or password", "",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+
                 return;
             }
             catch(UserInputException)
             {
+                enterClicks++;
+
+                if (enterClicks % 5 == 0)
+                {
+                    int sleepTime = 15000;
+
+                    PasswordPopupVisibility = Visibility.Visible;
+
+                    MessageBox.Show($"You entered the password incorrectly {enterClicks} times", "",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    Thread.Sleep(sleepTime);
+
+                    PasswordPopupVisibility = Visibility.Collapsed;
+
+                    return;
+                }
+                
                 MessageBox.Show("Not found user with these email and password", "",
                                 MessageBoxButton.OK, MessageBoxImage.Error);
+
                 return;
             }
         }

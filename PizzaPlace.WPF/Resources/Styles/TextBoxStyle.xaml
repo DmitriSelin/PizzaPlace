@@ -6,6 +6,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="MaxLength" Value="40"/>
     </Style>
 
     <Style x:Key="PasswordStyle" TargetType="PasswordBox">

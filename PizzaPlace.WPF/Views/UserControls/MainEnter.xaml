@@ -59,7 +59,8 @@
                            HorizontalAlignment="Left"/>
                 </WrapPanel>
                 <PasswordBox Grid.Row="8" Style="{StaticResource PasswordStyle}"
-                         Background="{StaticResource LightGrayBrush}">
+                         Background="{StaticResource LightGrayBrush}"
+                             MaxLength="30">
                     <b:Interaction.Behaviors>
                         <behaviors:PasswordBehavior Password="{Binding Password, Mode=TwoWay}"/>
                     </b:Interaction.Behaviors>
@@ -67,7 +68,8 @@
                 <TextBlock Grid.Row="9" Text="Repeat Password:" Style="{StaticResource BoldTextBlockStyle}"
                            HorizontalAlignment="Left" Margin="8, 0, 0, 0"/>
                 <PasswordBox Grid.Row="10" Style="{StaticResource PasswordStyle}"
-                         Background="{StaticResource LightGrayBrush}">
+                         Background="{StaticResource LightGrayBrush}"
+                             MaxLength="30">
                     <b:Interaction.Behaviors>
                         <behaviors:PasswordBehavior Password="{Binding  RepeatPassword, Mode=TwoWay}"/>
                     </b:Interaction.Behaviors>

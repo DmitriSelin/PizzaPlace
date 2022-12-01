@@ -8,6 +8,7 @@
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:behaviors="clr-namespace:PizzaPlace.WPF.Behaviors"
+             d:DataContext="{d:DesignInstance Type=vm:EnterViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{StaticResource MainColorBrush}">
@@ -58,7 +59,8 @@
                 <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
                              VerticalContentAlignment="Center"
                              Style="{StaticResource PasswordStyle}" 
-                             Background="{StaticResource LightGrayBrush}">
+                             Background="{StaticResource LightGrayBrush}"
+                             MaxLength="30">
                     <b:Interaction.Behaviors>
                         <behaviors:PasswordBehavior Password="{Binding Password, Mode=TwoWay}"/>
                     </b:Interaction.Behaviors>
@@ -68,6 +70,23 @@
                 <Button Grid.Column="1" Grid.Row="6" Command="{Binding OpenMainEnterViewCommand}"
                         Style="{StaticResource MainButtonStyle}"
                         Content="Register" Margin="20, 15"/>
+            </Grid>
+        </Border>
+        <Border Grid.Column="1" CornerRadius="20" 
+                Background="#F8F8FA"
+                Visibility="{Binding PasswordPopupVisibility}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <fa:ImageAwesome Grid.Row="1"
+                                 Icon="Regular_SadTear" Style="{StaticResource ContactImageStyle}"
+                                 Foreground="{StaticResource IconTextBrush}"/>
+                <TextBlock Grid.Row="2" Text="Please, wait 15 seconds"
+                           Style="{StaticResource BoldTextBlockStyle}"/>
             </Grid>
         </Border>
     </Grid>
