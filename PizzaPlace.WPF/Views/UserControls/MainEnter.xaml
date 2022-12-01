@@ -77,7 +77,7 @@
                             VerticalAlignment="Stretch" Content="Back"
                             Command="{Binding BackHomeCommand}" Cursor="Hand"/>
                     <Button Style="{StaticResource MainButtonStyle}" Margin="10, 5"
-                            VerticalAlignment="Stretch" Content="Log In"
+                            VerticalAlignment="Stretch" Content="Register"
                             Command="{Binding OpenMainUserViewCommand}" Cursor="Hand"/>
                 </UniformGrid>
             </Grid>

@@ -57,7 +57,8 @@
                 </WrapPanel>
                 <PasswordBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
                              VerticalContentAlignment="Center"
-                             Style="{StaticResource PasswordStyle}" Background="{StaticResource LightGrayBrush}">
+                             Style="{StaticResource PasswordStyle}" 
+                             Background="{StaticResource LightGrayBrush}">
                     <b:Interaction.Behaviors>
                         <behaviors:PasswordBehavior Password="{Binding Password, Mode=TwoWay}"/>
                     </b:Interaction.Behaviors>
@@ -66,7 +67,7 @@
                         Content="Sign In" Margin="20, 15" Style="{StaticResource MainButtonStyle}"/>
                 <Button Grid.Column="1" Grid.Row="6" Command="{Binding OpenMainEnterViewCommand}"
                         Style="{StaticResource MainButtonStyle}"
-                        Content="Log In" Margin="20, 15"/>
+                        Content="Register" Margin="20, 15"/>
             </Grid>
         </Border>
     </Grid>
