@@ -8,8 +8,6 @@ namespace PizzaPlaceDB.DAL.Context
     {
         public DbSet<User> Users { get; set; }
 
-        public DbSet<Admin> Admins { get; set; }
-
         public DbSet<Basket> Baskets { get; set; }
 
         public DbSet<Food> Food { get; set; }

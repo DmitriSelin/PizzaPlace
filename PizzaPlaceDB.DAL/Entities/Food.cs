@@ -19,10 +19,6 @@ namespace PizzaPlaceDB.DAL.Entities
 
         public virtual ICollection<Basket> Baskets { get; set; }
 
-        public int AdminId { get; set; }
-
-        public virtual Admin Admin { get; set; }
-
         public int CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
