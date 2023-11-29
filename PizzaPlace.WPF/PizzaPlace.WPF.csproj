@@ -9,10 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
     <Compile Remove="Resources\Templates\**" />
+    <Compile Remove="Services\**" />
+    <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Resources\Templates\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Models\**" />
     <None Remove="Resources\Templates\**" />
+    <None Remove="Services\**" />
+    <Page Remove="Models\**" />
     <Page Remove="Resources\Templates\**" />
+    <Page Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,9 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ddd\" />
     <Folder Include="Resources\Images\" />
-    <Folder Include="Services\kk\" />
   </ItemGroup>
 
 </Project>
