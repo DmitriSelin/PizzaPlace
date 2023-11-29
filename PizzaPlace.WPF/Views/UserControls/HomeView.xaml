@@ -30,7 +30,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0" Style="{StaticResource LoginStyle}"
-                     Background="{StaticResource TransParentColorBrush}"
+                         Background="{StaticResource TransParentColorBrush}"
                          BorderThickness="2" BorderBrush="DarkSlateGray"
                          x:Name="FoodFilterText" TextChanged="OnFoodFilterTextChanged"/>
                 <fa:ImageAwesome Grid.Column="1" Icon="Solid_Search" Margin="5"/>

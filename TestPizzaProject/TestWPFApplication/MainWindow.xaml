@@ -8,7 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <PasswordBox FontSize="30" HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"/>
+        <Button Height="200" Width="400" Content="Здравствуйте" FontSize="40"/>
     </Grid>
 </Window>
